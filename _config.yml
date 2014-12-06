@@ -1,0 +1,14 @@
+name: Blog by Arun Raj
+description: Blogging about stuffs
+meta_description: "theblueasterisk"
+
+markdown: redcarpet
+highlighter: pygments
+logo: false
+paginate: 15
+baseurl: /
+domain_name: ''
+
+# Details for the RSS feed generator
+url:            'blueasterisk.github.io'
+author:         'Arun Raj'

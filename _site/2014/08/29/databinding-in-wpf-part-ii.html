@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Blog by Arun Raj - Blogging about stuffs</title>
+    <meta name="description" content="theblueasterisk" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+
+</head>
+<body class="post-template">
+
+    <header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="/">Home</a>
+        <a class="subscribe-button icon-feed" href="/rss.xml">Subscribe</a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">DataBinding In WPF : Part II</h1>
+            <section class="post-meta">                
+                <time class="post-date" datetime="2014-08-29">29 Aug 2014</time>
+                
+            </section>
+        </header>
+
+<!--         <header class="post-header">
+            <a id="blog-logo" href="blueasterisk.github.io">
+                
+                    <span class="blog-title">Blog by Arun Raj</span>
+                 
+            </a>
+        </header> -->
+        
+        <!-- <span class="post-meta">
+            <time datetime="2014-08-29">29 Aug 2014</time>
+            
+        </span> -->
+
+        <!-- <h1 class="post-title">DataBinding In WPF : Part II</h1> -->
+
+        <section class="post-content">
+            <p>Now lets see the remaining parts of DataBinding</p>
+
+<ul>
+<li><p>Converters in Data Binding</p></li>
+<li><p>Multi Binding</p></li>
+<li><p>Validation</p></li>
+<li><p>Binding to Non-DP</p></li>
+<li><p>Binding to Collections</p></li>
+<li><p>Datatemplates and Data triggers</p></li>
+<li><p>DataTemplate Selectors</p></li>
+</ul>
+
+<p><strong>Converters In DataBinding</strong></p>
+
+<p>In this part we&#39;ll see how value converters are used in data binding and we&#39;ll create a bool to visibility converter to better understand the concept. In the previous data binding scenarios we&#39;ve directly bound the value of source to target. At times it&#39;d be necessary to bind relative values to the target and provide a conversion from one format to another while the actual binding process. For such purposes Converters can be used. They provide means to assign relative values in databinding. Any converter class in databinding inherits from an Interface called IValueConverter. The class must contain two functions namely</p>
+
+<ul>
+<li><p><code>object Convert(object value, Type targetType, object parameter, CultureInfo culture)  and</code></p></li>
+<li><p><code>object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)</code></p></li>
+</ul>
+
+<p>These functions provide means to convert data from one object to another while binding takes place.</p>
+
+<p>Now suppose we have a Checkbox and we want to show something say a listbox while the checkbox is checked and remove the listbox while the checkbox is cleared. Lets see how this is done by implementing  bool to Visibility value converter. As for the example I&#39;m going to use XAML and C# to implement this.</p>
+
+<p>in c# create a class that inherits from IValueConverter and implement the convert functions. Within these functions use the logic required to implement the conversion.</p>
+
+<blockquote>`
+class boolVis:IValueConverter
+{
+public object Convert(object t,Type type, object parameter, CultureInfo culture)
+{
+return (t is bool && (bool)t) ? Visibility.Visible : Visibility.Hidden;
+}
+public object ConvertBack(object t, Type type, object parameter, CultureInfo culture)
+{
+return (t is Visibility && (Visibility)t == Visibility.Visible);
+}
+}`</blockquote>
+
+<p>In xaml refer to the namespace where you&#39;ve written the code above and give it a name (in this example I gave it the name local). Now create an instance of the converter in the resources</p>
+
+<blockquote>` <local:boolVis x:Key="MyConverter"/>`</blockquote>
+
+<p>Now I can use MyConverter in databinding as</p>
+
+<blockquote>`<StackPanel>`
+`<CheckBox Name="Mycheck" Content="Show the List"/>`
+`<ListBox Background="Red" Height="70" Visibility="{Binding IsChecked, ElementName=Mycheck, Converter={StaticResource MyConverter}}" />`
+`</Stackpanel>
+`</blockquote>
+
+<p>I&#39;ve assigned a background color to show the presence of the listbox in the UI.</p>
+
+<p><strong>Multi-Binding</strong></p>
+
+<p>Binding of multiple elements is done in WPF by the use of a MultiValue Converter. That is at the target property we use an instance of predefined MultiValue converter to bind more than one properties two a single target property. Suppose we have two text boxes that have their contents binded to a single textblock. To achieve this we first have to define a converter that is derived from <code>IMultiValueConverter</code> an implement its two functions``</p>
+
+<blockquote>`object Convert(object[] values, Type targetType, object parameter, CultureInfo culture);  and
+object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture);`</blockquote>
+
+<p>as you can see the Convert function accepts an array of value objects and returns a single value that is assigned to the target property. Similarly the ConvertBack accepts an object and returns the object array that get assigned to the source properties.</p>
+
+<p>To accomplish our goal we first need to create the multivalue converter class. An example is given below</p>
+
+<blockquote>`
+class MultiBinderClass: IMultiValueConverter
+{
+public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+{
+return (string.Format(values[0]+" "+values[1]));
+}
+public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+{
+throw new NotImplementedException();
+}
+}`</blockquote>
+
+<p>Now in XAML we refer to the namespace and create an instance of the class. My namespace reference was <code>app</code> so I can create an instance of the class as</p>
+
+<blockquote> `<app:MultiBinderClass x:Key="MultiValueConverter"/>`</blockquote>
+
+<p>If we have two text boxes as</p>
+
+<blockquote>` <TextBox x:Name="txtbox"/>
+<TextBox x:Name="txtbox2"/>
+`</blockquote>
+
+<p>Now I can bind the textblock as</p>
+
+<blockquote>` <TextBlock>
+<TextBlock.Text>
+<MultiBinding Converter="{StaticResource MultiValueConverter}">
+<Binding ElementName="txtbox" Path="Text"/>
+<Binding ElementName="txtbox2" Path="Text"/>
+</MultiBinding>
+</TextBlock.Text>
+</TextBlock>
+`</blockquote>
+
+<p>This would bind the two textbox contents to the textblock text property. Obviously we don&#39;t need a ConvertBack function.</p>
+
+<p><strong>Validation in DataBinding</strong></p>
+
+<p>Validation is used to provide information to the user about the type and format of the data that a field can have. It enforces some rules while source is being updated. Validation rules are processed when target to source binding takes place. Suppose a text box is used to enter the width of an interactive rectangle. Characters can also be entered within that text box, but this wouldn&#39;t be a meaningful value for the text box. Lets see how validation rules  can be used to provide a feedback to the user. Consider the XAML code below</p>
+
+<blockquote>`<StackPanel Width="400">
+<Rectangle x:Name="RedRect" Fill="Red" Height="150" Width=" 150" />
+<TextBox>
+<TextBox.Text>
+<Binding ElementName="RedRect" Path="Width" UpdateSourceTrigger="PropertyChanged">
+<Binding.ValidationRules>
+<ExceptionValidationRule/>
+</Binding.ValidationRules>
+</Binding>
+</TextBox.Text>
+</TextBox>
+</StackPanel>`</blockquote>
+
+<p>As a character is entered within the text box you can see a red border around the text box indicating that the value is invalid while binding. The <code>ExceptionValidationRule</code> can also be replaced with custom rules for validation. Lets see how to write a custom validation rule.</p>
+
+<p>First we need to create a class that derives from ValidationRule. The derived class should override a method called Validate. The validate method returns a ValidationResult object after performing required validation logic.</p>
+
+<blockquote>` public class WidthValidationRule : ValidationRule
+{
+public override ValidationResult Validate(object value, CultureInfo cultureInfo)
+{
+int result;
+if (Int32.TryParse((string)value,out result))
+{
+return new ValidationResult(true, null);
+}
+else
+return new ValidationResult(false, null);
+}
+}`</blockquote>
+
+<p>In XAML refer to the namespace containing the above class (given as local in this case) and then at ValidationRules of binding give the class name as</p>
+
+<blockquote>`<Binding.ValidationRules>
+<local:WidthValidationRule/>
+</Binding.ValidationRules>
+`</blockquote>
+
+<p><strong>Binding to Non -DP s</strong></p>
+
+<p>So far we&#39;ve been binding data between UI elements. Lets see how to bind a dependency property to a CLR property. Since dependency properties have their own measure and arrange overrides whenever their value changes the element to which the property is bound to automatically gets updated. But this is not the scenario when we are binding a CLR property to a dependency property. In such cases when the value of a CLR property changes we need to convey to the UI that their values have been changed so that changes be reflected in the UI as well. Consider an example where you&#39;d want to create a property that changes its value to a random value between 1-100 on a button-click. The class for the property should be defined as</p>
+
+<blockquote>`public class Disp : INotifyPropertyChanged
+{
+Random rnd = new Random();
+private int randomvar;
+public int RandomVar
+{
+get { return randomvar; }
+set
+{
+randomvar = value;
+RaisePropertyChanged("RandomVar");
+}
+}`
+`public event PropertyChangedEventHandler PropertyChanged;`
+`private void RaisePropertyChanged(string propName)
+{
+if (PropertyChanged != null)
+PropertyChanged(this, new PropertyChangedEventArgs(propName));
+}
+public Disp()
+{
+Update();
+}
+public void Update()
+{
+RandomVar= rnd.Next(100);
+}
+}`</blockquote>
+
+<p>And in the mouse click event we can call the Update() to update the value of the  RandomVar property.</p>
+
+<p><strong>Binding to Collections</strong></p>
+
+<p>Binding to collections is quite similar to binding to Non-Dps. Here we need to implement the PropertyChangedEvent for both the individual elements of the collection and the collection itself. This is to inform the UI that the number of elements in the collection has changed and need to be reflected in the UI. That is each element in the collection should be a property that fires the PropertyChangedEvent whenever its value gets changed. Consider a students collection bound to a listbox in XAML. Student element class should implement the INotifyPropertyChanged as</p>
+
+<blockquote>`class Student : INotifyPropertyChanged
+{
+private string _name;
+private int _age;
+public string Name
+{
+get
+{
+return _name.ToString();
+}
+set
+{
+_name = value;
+RaiseEventChanged("Name");
+}
+}
+public int Age
+{
+get
+{
+return _age;
+}
+set
+{
+_age = value;
+RaiseEventChanged("Age");
+}
+}
+public event PropertyChangedEventHandler PropertyChanged;
+private void RaiseEventChanged(string propName)
+{
+if (PropertyChanged != null)
+{
+PropertyChanged(this, new PropertyChangedEventArgs(propName));
+}
+}
+public override string ToString()
+{
+return _name.ToString();
+}
+}`</blockquote>
+
+<p>We&#39;ll talk about the ToStringOverride() later in this topic. For now the above code declares two properties defined in a class that implements the INotifyPropertyChanged interface and the PropertyChangedEvent. Now lets see how collection class is defined. A collection class needs to implement INotifyCollectionChanged interface or any other class which inherits the INotifyCollectionChanged. For now lets consider the ObservableCollection&lt;&gt; class which inherits from INotifyCollectionChanged. The following code implements such a collection and adds some elements to the list.</p>
+
+<blockquote>`class Students: ObservableCollection<Student>
+{
+static int i;
+public Students()
+{
+Update();
+}
+public void Update()
+{
+for (i = 0; i < 10; i++)
+{
+Student s = new Student();
+s.Age = i * 5;
+s.Name = "Student_" + i.ToString();
+this.Add(s);
+}
+}
+}
+`</blockquote>
+
+<p>And on the button click we can give</p>
+
+<blockquote>`private void Button_Click(object sender, RoutedEventArgs e)
+{
+(this.DataContext as Students).Update();
+}`</blockquote>
+
+<p>But make sure that you&#39;ve set the data context to a new instance of the Students class in the Constructor.</p>
+
+<blockquote>`this.DataContext = new Students();`</blockquote>
+
+<p>in the constructor should do the trick.</p>
+
+<p><strong>Datatemplates and DataTriggers</strong></p>
+
+<p>Data Templates and Data Triggers are used to style data based on its contents and type. Consider the same student class as of above. The XAML for such a listbox would be as     <ListBox Height=" 200" Width=" 200" ItemsSource="{Binding}"></ListBox></p>
+
+<p>Now if we want to template the Listbox we can use data templates. Data templates allow templating of controls and provide a better user experience. To give a background to the listbox items we can code as</p>
+
+<blockquote>`<DataTemplate DataType="{x:Type local:Student}">
+<Border Name="disco"
+BorderThickness="2"
+BorderBrush="Black"
+Background="Red"
+Padding="10">
+<TextBlock Text="{Binding Path=Name}" />
+</Border>
+</DataTemplate>
+`</blockquote>
+
+<p>This allows templating of the objects of the class Student. We can also template an element based on its content. For that we use data triggers. The following code implements data triggers to the above code and changes the background property of elements with value &quot;Student_3&quot; to yellow.</p>
+
+<blockquote>`
+<DataTemplate DataType="{x:Type local:Student}">
+<Border Name="disco"
+BorderThickness="2"
+BorderBrush="Black"
+Background="Red"
+Padding="10">
+<TextBlock Text="{Binding Path=Name}" />
+</Border>
+<DataTemplate.Triggers>
+<DataTrigger Binding="{Binding Name}"
+Value="Student_3">
+<Setter TargetName="disco"
+Property="Background"
+Value="Yellow" />
+</DataTrigger>
+</DataTemplate.Triggers>
+</DataTemplate>`</blockquote>
+
+<p><strong>Datatemplate Selectors</strong></p>
+
+<p>Data template selectors allow switching of data template based on the data content of the object. Consider a case when you want yellow background for integer values higher than a particular value and blue background the rest of the values in your listbox. For such situations we need to create a DataTemplateSelector class inherits from <code>DataTemplateSelectorClass</code>. It should also implement a function called <code> DataTemplate SelectTemplate(object item, DependencyObject container)</code> and should return a datatemplate which may be defined in the some resource dictionary. For example</p>
+
+<blockquote>` return Window.FindResource("DataTemplateName") as DataTemplate;`</blockquote>
+
+<p>In XAML define the data templates in the any of resources dictionary in scope, create an instance of the class as we&#39;ve discussed above and give that as the datatemplate in Listbox template property.</p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+            <!-- If we want to display author's name and bio -->
+            
+                <figure class="author-image">
+                    <a class="img" href="/" style="background-image: url(/assets/images/profile.png)">
+                    <span class="hidden">Arun Raj's Picture</span></a>
+                </figure>
+                <section class="author">
+                    <!-- Author Name -->
+                    <h4> Arun Raj </h4>
+                    <!-- Author Bio -->
+                    <p> 
+                        Here goes the author description. You might want to place some links too in here
+                    </p>
+                </section>                
+            
+
+            <!-- Share links section -->
+            <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=DataBinding In WPF : Part II&amp;url=s/2014/08/29/databinding-in-wpf-part-ii.html"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=s/2014/08/29/databinding-in-wpf-part-ii.html"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=s/2014/08/29/databinding-in-wpf-part-ii.html"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+            
+            <!-- Disqus comments -->
+            
+            
+        </footer>
+
+    </article>
+
+</main>
+
+    <footer class="site-footer clearfix">
+      <section class="copyright">
+        <a href="/">Blog by Arun Raj</a> &copy; 
+               &bull; All rights reserved.
+      </section>
+      <section class="poweredby">Made with Jekyll using 
+        <a href="http://github.com/rosario/kasper">Kasper theme</a>
+      </section>
+    </footer>
+    
+    <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>   
+</body>
+</html>

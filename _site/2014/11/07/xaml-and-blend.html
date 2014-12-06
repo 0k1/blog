@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Blog by Arun Raj - Blogging about stuffs</title>
+    <meta name="description" content="theblueasterisk" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+
+</head>
+<body class="post-template">
+
+    <header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="/">Home</a>
+        <a class="subscribe-button icon-feed" href="/rss.xml">Subscribe</a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">XAML -Extensible Application Markup Language</h1>
+            <section class="post-meta">                
+                <time class="post-date" datetime="2014-11-07">07 Nov 2014</time>
+                
+            </section>
+        </header>
+
+<!--         <header class="post-header">
+            <a id="blog-logo" href="blueasterisk.github.io">
+                
+                    <span class="blog-title">Blog by Arun Raj</span>
+                 
+            </a>
+        </header> -->
+        
+        <!-- <span class="post-meta">
+            <time datetime="2014-11-07">07 Nov 2014</time>
+            
+        </span> -->
+
+        <!-- <h1 class="post-title">XAML -Extensible Application Markup Language</h1> -->
+
+        <section class="post-content">
+            <p>XAML stands for Extensible Application Markup Language. It is the stuff under all windows UI we see today. Win8 Store apps, Win phone apps and now with the introduction of windows 10 we&#39;ll see XAML in xbox application development too. The <a href="http://msdn.microsoft.com/en-in/library/cc295302.aspx">MSDN article</a> and <a href="http://en.wikipedia.org/wiki/Extensible_Application_Markup_Language">wiki </a>are nice reads if you want to know more about XAML. Majority of the applications in windows are now developed with WPF.</p>
+
+<p>WPF is based on managed code but uses a markup language, Extensible Application Markup Language (XAML), to make building applications much easier for designers. XAML-based applications currently support C# and Microsoft Visual Basic .NET.</p>
+
+<p>XAML enables complex designs to be implemented for an application&#39;s UI. It introduces concepts like Styles, Templates, Triggers, Visual states etc. These concepts allow the developers to truly take control of each elements and define their behavior in the applications UI. Hence complex behavior of elements can be defined using XAML. Lets see how a control in WPF is styled templated and have its visual states set with the help of Blend for Visual Studio.</p>
+
+<p><strong>Styling a control. </strong></p>
+
+<p>Lets have a look at the following textbox</p>
+
+<p><code>&lt;TextBox Background=&quot;Transparent&quot; </code> <code>FontSize=&quot;{StaticResource MediumFontSize}&quot; </code> <code>Height=&quot;40&quot; BorderThickness=&quot;0&quot; Margin=&quot;0,-1,0,0&quot; </code> <code>Foreground=&quot;{StaticResource TaskItemPrimaryTextBrush}&quot;  </code> <code>Text=&quot;{Binding Path=SearchTexts, Mode=TwoWay}&quot; </code> <code>HorizontalAlignment=&quot;Stretch&quot; /&gt;</code></p>
+
+<p>This textbox control has a lot of properties set on it.  XAML provides lot of properties that can be set on controls in order to make it look like the design we  require. Now these properties can be individually set on the controls or we can define a style and apply the style to the text box control. Styles can be defined in any resource collection. Ie, we can define a style say in control level or in page level or application level. To define it in a control level we define the style in the resource collection of that control. If we want to alter properties text boxes within a grid only we&#39;d define the style that targets textboxes within the Grid.Resources collection. If we want to alter the style of all textboxes within the application. We&#39;ll write the style within the Application.Resources collection. If property values are set using multiple styles then WPF follows a priority rule to decide decide which value gets assigned in the end.</p>
+
+<p><strong>Step 1</strong>: Determine Base Value</p>
+
+<p>In the order of diminishing priority:</p>
+
+<p>(a) Local Value
+(b) Style triggers
+(c) Template Triggers
+(d) Style Setters
+(e) Theme Style Triggers
+(f) Theme Style Setters
+(g) Inheritance
+(h) Default Value</p>
+
+<p><strong>Step 2</strong>: Evaluate – If Step 1 returns expression (DataBinding or DynamicResource), evaluate the expression and fix the value
+<strong>Step 3</strong>: Apply Animation. If animation properties are set, they take more preference.
+<strong>Step 4</strong>: Coerce - If CoerceValueCallback defined that value gets assigned.
+<strong>Step 5</strong>: Validate - If ValidateValueCallback defined then value after validation gets assigned. What we should note at such a situation is that fundamentally we are setting values for dependency properties. The rules that apply to a dependency property also gets applied here. And yeah, the above lines are from <a href="http://jimmangaly.blogspot.in/">Jim Mangaly</a>. Most of what I write about WPF is from him so copying didn&#39;t seem like a bad idea at the time. Thanks Jim :)</p>
+
+<p>Another important fact is the behavior of a resource collection. A resource collection consists of pair of keys and values. Styles we create are also pair of keys and values.</p>
+
+<p><code>&lt;Style x:Key=&quot;TasksGridViewItemStyle&quot; TargetType=&quot;GridViewItem&quot;&gt; &lt;Setter Property=&quot;FontFamily&quot; Value=&quot;{ThemeResource ContentControlThemeFontFamily}&quot; /&gt; &lt;Setter Property=&quot;FontSize&quot; Value=&quot;{ThemeResource ControlContentThemeFontSize}&quot;&gt;
+&lt;Setter Property=&quot;Margin&quot; Value=&quot;0,0,10,10&quot; /&gt; &lt;Setter Property=&quot;VerticalContentAlignment&quot; Value=&quot;Top&quot; /&gt; &lt;/Style&gt;</code></p>
+
+<p>The above style targets grid view items. If we were to create such a style without a key . Ie</p>
+
+<p><code>&lt;Style TargetType=&quot;GridViewItem&quot;&gt; ..... &lt;/Style&gt;</code></p>
+
+<p>Then the style gets applied to all the GridViewItems within the scope of that resource file. This comes handy when we want to style all elements in a particular context.</p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+            <!-- If we want to display author's name and bio -->
+            
+                <figure class="author-image">
+                    <a class="img" href="/" style="background-image: url(/assets/images/profile.png)">
+                    <span class="hidden">Arun Raj's Picture</span></a>
+                </figure>
+                <section class="author">
+                    <!-- Author Name -->
+                    <h4> Arun Raj </h4>
+                    <!-- Author Bio -->
+                    <p> 
+                        Here goes the author description. You might want to place some links too in here
+                    </p>
+                </section>                
+            
+
+            <!-- Share links section -->
+            <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=XAML -Extensible Application Markup Language&amp;url=s/2014/11/07/xaml-and-blend.html"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=s/2014/11/07/xaml-and-blend.html"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=s/2014/11/07/xaml-and-blend.html"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+            
+            <!-- Disqus comments -->
+            
+            
+        </footer>
+
+    </article>
+
+</main>
+
+    <footer class="site-footer clearfix">
+      <section class="copyright">
+        <a href="/">Blog by Arun Raj</a> &copy; 
+               &bull; All rights reserved.
+      </section>
+      <section class="poweredby">Made with Jekyll using 
+        <a href="http://github.com/rosario/kasper">Kasper theme</a>
+      </section>
+    </footer>
+    
+    <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>   
+</body>
+</html>
