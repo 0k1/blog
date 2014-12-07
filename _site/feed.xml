@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>web log by arun</title>
-    <description>Stuff that i find interesting
-</description>
-    <link>http://blueasterisk.github.io/blog//</link>
-    <atom:link href="http://blueasterisk.github.io/blog//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 07 Dec 2014 21:06:21 +0530</pubDate>
-    <lastBuildDate>Sun, 07 Dec 2014 21:06:21 +0530</lastBuildDate>
+    <title></title>
+    <description>web log by arun raj.</description>
+    <link>/blog/</link>
+    <atom:link href="/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 07 Dec 2014 21:47:16 +0530</pubDate>
+    <lastBuildDate>Sun, 07 Dec 2014 21:47:16 +0530</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -31,8 +30,8 @@
 &lt;p&gt;stupidapple884@gmail.com or facebooksucksmorethanmyvacuum@gmail.com. XD&lt;/p&gt;
 </description>
         <pubDate>Sat, 29 Nov 2014 14:52:00 +0530</pubDate>
-        <link>http://blueasterisk.github.io/blog//2014/11/29/things-that-gmail-just-wont-allow.html</link>
-        <guid isPermaLink="true">http://blueasterisk.github.io/blog//2014/11/29/things-that-gmail-just-wont-allow.html</guid>
+        <link>/blog/2014/11/29/things-that-gmail-just-wont-allow/</link>
+        <guid isPermaLink="true">/blog/2014/11/29/things-that-gmail-just-wont-allow/</guid>
         
         
       </item>
@@ -83,8 +82,8 @@
 &lt;p&gt;Then the style gets applied to all the GridViewItems within the scope of that resource file. This comes handy when we want to style all elements in a particular context.&lt;/p&gt;
 </description>
         <pubDate>Fri, 07 Nov 2014 12:25:45 +0530</pubDate>
-        <link>http://blueasterisk.github.io/blog//2014/11/07/xaml-and-blend.html</link>
-        <guid isPermaLink="true">http://blueasterisk.github.io/blog//2014/11/07/xaml-and-blend.html</guid>
+        <link>/blog/2014/11/07/xaml-and-blend/</link>
+        <guid isPermaLink="true">/blog/2014/11/07/xaml-and-blend/</guid>
         
         
       </item>
@@ -94,8 +93,8 @@
         <description>&lt;p&gt;Want to check whether a site is up in your app ? Isitup.org provides a neat way to do that. To get a json response simply send a httprequest to http://isitup.org/&lt;yourwebsite&gt;.json . The response from the south-east-asian dota 2 server of valve would look like this. [http://isitup.org/sgp-1.valve.net.json](http://isitup.org/sgp-1.valve.net.json).&lt;/yourwebsite&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 24 Sep 2014 17:23:33 +0530</pubDate>
-        <link>http://blueasterisk.github.io/blog//2014/09/24/neat-api-to-check-availability.html</link>
-        <guid isPermaLink="true">http://blueasterisk.github.io/blog//2014/09/24/neat-api-to-check-availability.html</guid>
+        <link>/blog/2014/09/24/neat-api-to-check-availability/</link>
+        <guid isPermaLink="true">/blog/2014/09/24/neat-api-to-check-availability/</guid>
         
         
       </item>
@@ -140,8 +139,8 @@ xmlhttprequest.send('&amp;lt;json data&amp;gt;');//fill the data in JSON here
 }&lt;/code&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 18 Sep 2014 18:00:54 +0530</pubDate>
-        <link>http://blueasterisk.github.io/blog//2014/09/18/ajax-requests.html</link>
-        <guid isPermaLink="true">http://blueasterisk.github.io/blog//2014/09/18/ajax-requests.html</guid>
+        <link>/blog/2014/09/18/ajax-requests/</link>
+        <guid isPermaLink="true">/blog/2014/09/18/ajax-requests/</guid>
         
         
       </item>
@@ -474,8 +473,8 @@ In XAML define the data templates in the any of resources dictionary in scope, c
 &lt;/student&gt;&lt;/blockquote&gt;
 </description>
         <pubDate>Fri, 29 Aug 2014 11:33:48 +0530</pubDate>
-        <link>http://blueasterisk.github.io/blog//2014/08/29/databinding-in-wpf-part-ii.html</link>
-        <guid isPermaLink="true">http://blueasterisk.github.io/blog//2014/08/29/databinding-in-wpf-part-ii.html</guid>
+        <link>/blog/2014/08/29/databinding-in-wpf-part-ii/</link>
+        <guid isPermaLink="true">/blog/2014/08/29/databinding-in-wpf-part-ii/</guid>
         
         
       </item>
@@ -626,8 +625,8 @@ be.UpdateSource();
 &lt;p&gt;In the above example the button click updates the source.&lt;/p&gt;
 </description>
         <pubDate>Wed, 27 Aug 2014 13:50:03 +0530</pubDate>
-        <link>http://blueasterisk.github.io/blog//2014/08/27/databinding-in-wpf.html</link>
-        <guid isPermaLink="true">http://blueasterisk.github.io/blog//2014/08/27/databinding-in-wpf.html</guid>
+        <link>/blog/2014/08/27/databinding-in-wpf/</link>
+        <guid isPermaLink="true">/blog/2014/08/27/databinding-in-wpf/</guid>
         
         <category>Data Binding</category>
         
@@ -699,8 +698,8 @@ public static readonly RoutedEvent MyRoutedEvent=EventManager.RegisterRoutedEven
 A custom routed event can be registered in the WPF Routed events list as above.&lt;/p&gt;
 </description>
         <pubDate>Mon, 28 Jul 2014 18:09:19 +0530</pubDate>
-        <link>http://blueasterisk.github.io/blog//2014/07/28/routed-events-in-wpf.html</link>
-        <guid isPermaLink="true">http://blueasterisk.github.io/blog//2014/07/28/routed-events-in-wpf.html</guid>
+        <link>/blog/2014/07/28/routed-events-in-wpf/</link>
+        <guid isPermaLink="true">/blog/2014/07/28/routed-events-in-wpf/</guid>
         
         
       </item>
@@ -710,8 +709,8 @@ A custom routed event can be registered in the WPF Routed events list as above.&
         <description>&lt;p&gt;WPF , previously known as ‘Avalon’ was first released along with .NET framework 3.0 for rendering user interfaces. It uses DirectX which enabled a much better user experience than older GDI systems. WPF applications are developed with the help of XAML, an XML based markup language. XAML stands for eXtensible Application Markup Language. It defines the UI elements and their alignment and can also work with a C# backend.&lt;/p&gt;
 </description>
         <pubDate>Sun, 27 Jul 2014 09:48:32 +0530</pubDate>
-        <link>http://blueasterisk.github.io/blog//2014/07/27/intro.html</link>
-        <guid isPermaLink="true">http://blueasterisk.github.io/blog//2014/07/27/intro.html</guid>
+        <link>/blog/2014/07/27/intro/</link>
+        <guid isPermaLink="true">/blog/2014/07/27/intro/</guid>
         
         
       </item>
@@ -721,8 +720,8 @@ A custom routed event can be registered in the WPF Routed events list as above.&
         <description>&lt;p&gt;Well, I thought of starting this blog as a personal reference for the time. In the following blogs I’ll go through the fundamentals of Windows Presentation Foundation. After which I’ll share anything and everything I find interesting.&lt;/p&gt;
 </description>
         <pubDate>Sun, 27 Jul 2014 09:21:30 +0530</pubDate>
-        <link>http://blueasterisk.github.io/blog//2014/07/27/post-1-preface.html</link>
-        <guid isPermaLink="true">http://blueasterisk.github.io/blog//2014/07/27/post-1-preface.html</guid>
+        <link>/blog/2014/07/27/post-1-preface/</link>
+        <guid isPermaLink="true">/blog/2014/07/27/post-1-preface/</guid>
         
         
       </item>
