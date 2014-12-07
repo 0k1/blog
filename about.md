@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About me 
+title: About
+permalink: /about/
 ---
-
-I'm a beginner in windows presentation foundation. Tries to solve most with c# and xaml :)
+I'm a beginner in application development on windows. Tries to solve most with C# and xaml:) 

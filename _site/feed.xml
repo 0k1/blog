@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web log by arun</title>
+    <description>Stuff that i find interesting
+</description>
+    <link>http://blueasterisk.github.io/blog//</link>
+    <atom:link href="http://blueasterisk.github.io/blog//feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 07 Dec 2014 21:06:21 +0530</pubDate>
+    <lastBuildDate>Sun, 07 Dec 2014 21:06:21 +0530</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Things that gmail just won't allow !</title>
+        <description>&lt;p&gt;Try this.&lt;/p&gt;
+
+&lt;p&gt;Go to www.gmail.com&lt;/p&gt;
+
+&lt;p&gt;Create a new user&lt;/p&gt;
+
+&lt;p&gt;Choose a random username - let it be ksjadfhakjsdhfkjsg&lt;/p&gt;
+
+&lt;p&gt;Add google to that -  ksjadfhakjsdhfkjsggoogle&lt;/p&gt;
+
+&lt;p&gt;Voila ! - Someone already has that username. Try another?&lt;/p&gt;
+
+&lt;p&gt;This works the same if you use ”microsoft”.&lt;/p&gt;
+
+&lt;p&gt;But you CAN make accounts like yahoocantgethisfar@gmail.com&lt;/p&gt;
+
+&lt;p&gt;stupidapple884@gmail.com or facebooksucksmorethanmyvacuum@gmail.com. XD&lt;/p&gt;
+</description>
+        <pubDate>Sat, 29 Nov 2014 14:52:00 +0530</pubDate>
+        <link>http://blueasterisk.github.io/blog//2014/11/29/things-that-gmail-just-wont-allow.html</link>
+        <guid isPermaLink="true">http://blueasterisk.github.io/blog//2014/11/29/things-that-gmail-just-wont-allow.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>XAML -Extensible Application Markup Language</title>
+        <description>&lt;p&gt;XAML stands for Extensible Application Markup Language. It is the stuff under all windows UI we see today. Win8 Store apps, Win phone apps and now with the introduction of windows 10 we’ll see XAML in xbox application development too. The &lt;a href=&quot;http://msdn.microsoft.com/en-in/library/cc295302.aspx&quot;&gt;MSDN article&lt;/a&gt; and &lt;a href=&quot;http://en.wikipedia.org/wiki/Extensible_Application_Markup_Language&quot;&gt;wiki &lt;/a&gt;are nice reads if you want to know more about XAML. Majority of the applications in windows are now developed with WPF.&lt;/p&gt;
+
+&lt;p&gt;WPF is based on managed code but uses a markup language, Extensible Application Markup Language (XAML), to make building applications much easier for designers. XAML-based applications currently support C# and Microsoft Visual Basic .NET.&lt;/p&gt;
+
+&lt;p&gt;XAML enables complex designs to be implemented for an application’s UI. It introduces concepts like Styles, Templates, Triggers, Visual states etc. These concepts allow the developers to truly take control of each elements and define their behavior in the applications UI. Hence complex behavior of elements can be defined using XAML. Lets see how a control in WPF is styled templated and have its visual states set with the help of Blend for Visual Studio.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Styling a control. &lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Lets have a look at the following textbox&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;TextBox Background=&quot;Transparent&quot; &lt;/code&gt; &lt;code&gt;FontSize=&quot;{StaticResource MediumFontSize}&quot; &lt;/code&gt; &lt;code&gt;Height=&quot;40&quot; BorderThickness=&quot;0&quot; Margin=&quot;0,-1,0,0&quot; &lt;/code&gt; &lt;code&gt;Foreground=&quot;{StaticResource TaskItemPrimaryTextBrush}&quot;  &lt;/code&gt; &lt;code&gt;Text=&quot;{Binding Path=SearchTexts, Mode=TwoWay}&quot; &lt;/code&gt; &lt;code&gt;HorizontalAlignment=&quot;Stretch&quot; /&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This textbox control has a lot of properties set on it.  XAML provides lot of properties that can be set on controls in order to make it look like the design we  require. Now these properties can be individually set on the controls or we can define a style and apply the style to the text box control. Styles can be defined in any resource collection. Ie, we can define a style say in control level or in page level or application level. To define it in a control level we define the style in the resource collection of that control. If we want to alter properties text boxes within a grid only we’d define the style that targets textboxes within the Grid.Resources collection. If we want to alter the style of all textboxes within the application. We’ll write the style within the Application.Resources collection. If property values are set using multiple styles then WPF follows a priority rule to decide decide which value gets assigned in the end.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 1&lt;/strong&gt;: Determine Base Value&lt;/p&gt;
+
+&lt;p&gt;In the order of diminishing priority:&lt;/p&gt;
+
+&lt;p&gt;(a) Local Value
+(b) Style triggers
+(c) Template Triggers
+(d) Style Setters
+(e) Theme Style Triggers
+(f) Theme Style Setters
+(g) Inheritance
+(h) Default Value&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 2&lt;/strong&gt;: Evaluate – If Step 1 returns expression (DataBinding or DynamicResource), evaluate the expression and fix the value
+&lt;strong&gt;Step 3&lt;/strong&gt;: Apply Animation. If animation properties are set, they take more preference.
+&lt;strong&gt;Step 4&lt;/strong&gt;: Coerce - If CoerceValueCallback defined that value gets assigned.
+&lt;strong&gt;Step 5&lt;/strong&gt;: Validate - If ValidateValueCallback defined then value after validation gets assigned. What we should note at such a situation is that fundamentally we are setting values for dependency properties. The rules that apply to a dependency property also gets applied here. And yeah, the above lines are from &lt;a href=&quot;http://jimmangaly.blogspot.in/&quot;&gt;Jim Mangaly&lt;/a&gt;. Most of what I write about WPF is from him so copying didn’t seem like a bad idea at the time. Thanks Jim :)&lt;/p&gt;
+
+&lt;p&gt;Another important fact is the behavior of a resource collection. A resource collection consists of pair of keys and values. Styles we create are also pair of keys and values.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;Style x:Key=&quot;TasksGridViewItemStyle&quot; TargetType=&quot;GridViewItem&quot;&amp;gt; &amp;lt;Setter Property=&quot;FontFamily&quot; Value=&quot;{ThemeResource ContentControlThemeFontFamily}&quot; /&amp;gt; &amp;lt;Setter Property=&quot;FontSize&quot; Value=&quot;{ThemeResource ControlContentThemeFontSize}&quot;&amp;gt;
+&amp;lt;Setter Property=&quot;Margin&quot; Value=&quot;0,0,10,10&quot; /&amp;gt; &amp;lt;Setter Property=&quot;VerticalContentAlignment&quot; Value=&quot;Top&quot; /&amp;gt; &amp;lt;/Style&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The above style targets grid view items. If we were to create such a style without a key . Ie&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;Style TargetType=&quot;GridViewItem&quot;&amp;gt; ..... &amp;lt;/Style&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Then the style gets applied to all the GridViewItems within the scope of that resource file. This comes handy when we want to style all elements in a particular context.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 07 Nov 2014 12:25:45 +0530</pubDate>
+        <link>http://blueasterisk.github.io/blog//2014/11/07/xaml-and-blend.html</link>
+        <guid isPermaLink="true">http://blueasterisk.github.io/blog//2014/11/07/xaml-and-blend.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Neat way to check site availability</title>
+        <description>&lt;p&gt;Want to check whether a site is up in your app ? Isitup.org provides a neat way to do that. To get a json response simply send a httprequest to http://isitup.org/&lt;yourwebsite&gt;.json . The response from the south-east-asian dota 2 server of valve would look like this. [http://isitup.org/sgp-1.valve.net.json](http://isitup.org/sgp-1.valve.net.json).&lt;/yourwebsite&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 24 Sep 2014 17:23:33 +0530</pubDate>
+        <link>http://blueasterisk.github.io/blog//2014/09/24/neat-api-to-check-availability.html</link>
+        <guid isPermaLink="true">http://blueasterisk.github.io/blog//2014/09/24/neat-api-to-check-availability.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Ajax Requests </title>
+        <description>&lt;p&gt;AJAX stands for Asynchronous JavaScript and XML. A nice description about what Ajax is and how it operates is given in the &lt;a href=&quot;http://www.codeproject.com/Articles/31155/Ajax-Tutorial-for-Beginners-Part&quot;&gt;codeproject website&lt;/a&gt;. The basic operation of Ajax can be understood from the figure below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.codeproject.com/KB/ajax/AjaxTutorial/AJAX2.JPG&quot; alt=&quot;AJAX OPERATION&quot; /&gt;Again courtesy to codeproject.com&lt;/p&gt;
+
+&lt;p&gt;The codes below are some basic one’s that I’ve tried while learning the fundamentals of ajax&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;GET alert using ajax.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;function Alert(params) {
+var url=&quot;http://localhost:59741/api/&quot;;//Define url for your api here
+xmlhttprequest = new XMLHttpRequest();
+xmlhttprequest.onreadystatechange = function () {
+if (xmlhttprequest.readyState == 4 &amp;amp;&amp;amp; xmlhttprequest.status == 200) {
+alert(xmlhttprequest.responseText);
+}
+}
+xmlhttprequest.open(&quot;GET&quot;, url+ params, true);
+xmlhttprequest.send();
+}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;above Alert function accepts parameters which refer to api endpoints to do a normal get operation from the webservice&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;POST using Ajax&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;function PostDetails(params) {
+var url=&quot;http://localhost:59741/api/&quot;;//Define url for your api here
+xmlhttprequest = new XMLHttpRequest();
+xmlhttprequest.onreadystatechange = function () {
+if (xmlhttprequest.readyState == 4 &amp;amp;&amp;amp; xmlhttprequest.status == 200) {
+alert(&quot;Post Success&quot;);
+}
+}
+xmlhttprequest.open(&quot;POST&quot;, url+params, true);
+xmlhttprequest.setRequestHeader(&quot;Content-Type&quot;, &quot;application/json&quot;); // I'm using JSON format in this case
+xmlhttprequest.send('&amp;lt;json data&amp;gt;');//fill the data in JSON here
+}&lt;/code&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 18 Sep 2014 18:00:54 +0530</pubDate>
+        <link>http://blueasterisk.github.io/blog//2014/09/18/ajax-requests.html</link>
+        <guid isPermaLink="true">http://blueasterisk.github.io/blog//2014/09/18/ajax-requests.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>DataBinding In WPF : Part II</title>
+        <description>&lt;p&gt;Now lets see the remaining parts of DataBinding&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Converters in Data Binding&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Multi Binding&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Validation&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Binding to Non-DP&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Binding to Collections&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Datatemplates and Data triggers&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;DataTemplate Selectors&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Converters In DataBinding&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In this part we’ll see how value converters are used in data binding and we’ll create a bool to visibility converter to better understand the concept. In the previous data binding scenarios we’ve directly bound the value of source to target. At times it’d be necessary to bind relative values to the target and provide a conversion from one format to another while the actual binding process. For such purposes Converters can be used. They provide means to assign relative values in databinding. Any converter class in databinding inherits from an Interface called IValueConverter. The class must contain two functions namely&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code&gt;object Convert(object value, Type targetType, object parameter, CultureInfo culture)  and&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code&gt;object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These functions provide means to convert data from one object to another while binding takes place.&lt;/p&gt;
+
+&lt;p&gt;Now suppose we have a Checkbox and we want to show something say a listbox while the checkbox is checked and remove the listbox while the checkbox is cleared. Lets see how this is done by implementing  bool to Visibility value converter. As for the example I’m going to use XAML and C# to implement this.&lt;/p&gt;
+
+&lt;p&gt;in c# create a class that inherits from IValueConverter and implement the convert functions. Within these functions use the logic required to implement the conversion.&lt;/p&gt;
+
+&lt;blockquote&gt;`
+class boolVis:IValueConverter
+{
+public object Convert(object t,Type type, object parameter, CultureInfo culture)
+{
+return (t is bool &amp;amp;&amp;amp; (bool)t) ? Visibility.Visible : Visibility.Hidden;
+}
+public object ConvertBack(object t, Type type, object parameter, CultureInfo culture)
+{
+return (t is Visibility &amp;amp;&amp;amp; (Visibility)t == Visibility.Visible);
+}
+}`&lt;/blockquote&gt;
+
+&lt;p&gt;In xaml refer to the namespace where you’ve written the code above and give it a name (in this example I gave it the name local). Now create an instance of the converter in the resources&lt;/p&gt;
+
+&lt;blockquote&gt;` &lt;local:boolvis x:key=&quot;MyConverter&quot; /&gt;`&lt;/blockquote&gt;
+
+&lt;p&gt;Now I can use MyConverter in databinding as&lt;/p&gt;
+
+&lt;blockquote&gt;`&lt;stackpanel&gt;`
+`&lt;checkbox name=&quot;Mycheck&quot; content=&quot;Show the List&quot; /&gt;`
+`&lt;listbox background=&quot;Red&quot; height=&quot;70&quot; visibility=&quot;{Binding IsChecked, ElementName=Mycheck, Converter={StaticResource MyConverter}}&quot; /&gt;`
+`&lt;/stackpanel&gt;
+`&lt;/blockquote&gt;
+
+&lt;p&gt;I’ve assigned a background color to show the presence of the listbox in the UI.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Multi-Binding&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Binding of multiple elements is done in WPF by the use of a MultiValue Converter. That is at the target property we use an instance of predefined MultiValue converter to bind more than one properties two a single target property. Suppose we have two text boxes that have their contents binded to a single textblock. To achieve this we first have to define a converter that is derived from &lt;code&gt;IMultiValueConverter&lt;/code&gt; an implement its two functions``&lt;/p&gt;
+
+&lt;blockquote&gt;`object Convert(object[] values, Type targetType, object parameter, CultureInfo culture);  and
+object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture);`&lt;/blockquote&gt;
+
+&lt;p&gt;as you can see the Convert function accepts an array of value objects and returns a single value that is assigned to the target property. Similarly the ConvertBack accepts an object and returns the object array that get assigned to the source properties.&lt;/p&gt;
+
+&lt;p&gt;To accomplish our goal we first need to create the multivalue converter class. An example is given below&lt;/p&gt;
+
+&lt;blockquote&gt;`
+class MultiBinderClass: IMultiValueConverter
+{
+public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+{
+return (string.Format(values[0]+&quot; &quot;+values[1]));
+}
+public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+{
+throw new NotImplementedException();
+}
+}`&lt;/blockquote&gt;
+
+&lt;p&gt;Now in XAML we refer to the namespace and create an instance of the class. My namespace reference was &lt;code&gt;app&lt;/code&gt; so I can create an instance of the class as&lt;/p&gt;
+
+&lt;blockquote&gt; `&lt;app:multibinderclass x:key=&quot;MultiValueConverter&quot; /&gt;`&lt;/blockquote&gt;
+
+&lt;p&gt;If we have two text boxes as&lt;/p&gt;
+
+&lt;blockquote&gt;` &lt;textbox x:name=&quot;txtbox&quot; /&gt;
+&lt;textbox x:name=&quot;txtbox2&quot; /&gt;
+`&lt;/blockquote&gt;
+
+&lt;p&gt;Now I can bind the textblock as&lt;/p&gt;
+
+&lt;blockquote&gt;` &lt;textblock&gt;
+&lt;textblock.text&gt;
+&lt;multibinding converter=&quot;{StaticResource MultiValueConverter}&quot;&gt;
+&lt;binding elementname=&quot;txtbox&quot; path=&quot;Text&quot; /&gt;
+&lt;binding elementname=&quot;txtbox2&quot; path=&quot;Text&quot; /&gt;
+&lt;/multibinding&gt;
+&lt;/textblock.text&gt;
+&lt;/textblock&gt;
+`&lt;/blockquote&gt;
+
+&lt;p&gt;This would bind the two textbox contents to the textblock text property. Obviously we don’t need a ConvertBack function.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Validation in DataBinding&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Validation is used to provide information to the user about the type and format of the data that a field can have. It enforces some rules while source is being updated. Validation rules are processed when target to source binding takes place. Suppose a text box is used to enter the width of an interactive rectangle. Characters can also be entered within that text box, but this wouldn’t be a meaningful value for the text box. Lets see how validation rules  can be used to provide a feedback to the user. Consider the XAML code below&lt;/p&gt;
+
+&lt;blockquote&gt;`&lt;stackpanel width=&quot;400&quot;&gt;
+&lt;rectangle x:name=&quot;RedRect&quot; fill=&quot;Red&quot; height=&quot;150&quot; width=&quot; 150&quot; /&gt;
+&lt;textbox&gt;
+&lt;textbox.text&gt;
+&lt;binding elementname=&quot;RedRect&quot; path=&quot;Width&quot; updatesourcetrigger=&quot;PropertyChanged&quot;&gt;
+&lt;binding.validationrules&gt;
+&lt;exceptionvalidationrule /&gt;
+&lt;/binding.validationrules&gt;
+&lt;/binding&gt;
+&lt;/textbox.text&gt;
+&lt;/textbox&gt;
+&lt;/stackpanel&gt;`&lt;/blockquote&gt;
+
+&lt;p&gt;As a character is entered within the text box you can see a red border around the text box indicating that the value is invalid while binding. The &lt;code&gt;ExceptionValidationRule&lt;/code&gt; can also be replaced with custom rules for validation. Lets see how to write a custom validation rule.&lt;/p&gt;
+
+&lt;p&gt;First we need to create a class that derives from ValidationRule. The derived class should override a method called Validate. The validate method returns a ValidationResult object after performing required validation logic.&lt;/p&gt;
+
+&lt;blockquote&gt;` public class WidthValidationRule : ValidationRule
+{
+public override ValidationResult Validate(object value, CultureInfo cultureInfo)
+{
+int result;
+if (Int32.TryParse((string)value,out result))
+{
+return new ValidationResult(true, null);
+}
+else
+return new ValidationResult(false, null);
+}
+}`&lt;/blockquote&gt;
+
+&lt;p&gt;In XAML refer to the namespace containing the above class (given as local in this case) and then at ValidationRules of binding give the class name as&lt;/p&gt;
+
+&lt;blockquote&gt;`&lt;binding.validationrules&gt;
+&lt;local:widthvalidationrule /&gt;
+&lt;/binding.validationrules&gt;
+`&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Binding to Non -DP s&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;So far we’ve been binding data between UI elements. Lets see how to bind a dependency property to a CLR property. Since dependency properties have their own measure and arrange overrides whenever their value changes the element to which the property is bound to automatically gets updated. But this is not the scenario when we are binding a CLR property to a dependency property. In such cases when the value of a CLR property changes we need to convey to the UI that their values have been changed so that changes be reflected in the UI as well. Consider an example where you’d want to create a property that changes its value to a random value between 1-100 on a button-click. The class for the property should be defined as&lt;/p&gt;
+
+&lt;blockquote&gt;`public class Disp : INotifyPropertyChanged
+{
+Random rnd = new Random();
+private int randomvar;
+public int RandomVar
+{
+get { return randomvar; }
+set
+{
+randomvar = value;
+RaisePropertyChanged(&quot;RandomVar&quot;);
+}
+}`
+`public event PropertyChangedEventHandler PropertyChanged;`
+`private void RaisePropertyChanged(string propName)
+{
+if (PropertyChanged != null)
+PropertyChanged(this, new PropertyChangedEventArgs(propName));
+}
+public Disp()
+{
+Update();
+}
+public void Update()
+{
+RandomVar= rnd.Next(100);
+}
+}`&lt;/blockquote&gt;
+
+&lt;p&gt;And in the mouse click event we can call the Update() to update the value of the  RandomVar property.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Binding to Collections&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Binding to collections is quite similar to binding to Non-Dps. Here we need to implement the PropertyChangedEvent for both the individual elements of the collection and the collection itself. This is to inform the UI that the number of elements in the collection has changed and need to be reflected in the UI. That is each element in the collection should be a property that fires the PropertyChangedEvent whenever its value gets changed. Consider a students collection bound to a listbox in XAML. Student element class should implement the INotifyPropertyChanged as&lt;/p&gt;
+
+&lt;blockquote&gt;`class Student : INotifyPropertyChanged
+{
+private string _name;
+private int _age;
+public string Name
+{
+get
+{
+return _name.ToString();
+}
+set
+{
+_name = value;
+RaiseEventChanged(&quot;Name&quot;);
+}
+}
+public int Age
+{
+get
+{
+return _age;
+}
+set
+{
+_age = value;
+RaiseEventChanged(&quot;Age&quot;);
+}
+}
+public event PropertyChangedEventHandler PropertyChanged;
+private void RaiseEventChanged(string propName)
+{
+if (PropertyChanged != null)
+{
+PropertyChanged(this, new PropertyChangedEventArgs(propName));
+}
+}
+public override string ToString()
+{
+return _name.ToString();
+}
+}`&lt;/blockquote&gt;
+
+&lt;p&gt;We’ll talk about the ToStringOverride() later in this topic. For now the above code declares two properties defined in a class that implements the INotifyPropertyChanged interface and the PropertyChangedEvent. Now lets see how collection class is defined. A collection class needs to implement INotifyCollectionChanged interface or any other class which inherits the INotifyCollectionChanged. For now lets consider the ObservableCollection&amp;lt;&amp;gt; class which inherits from INotifyCollectionChanged. The following code implements such a collection and adds some elements to the list.&lt;/p&gt;
+
+&lt;blockquote&gt;`class Students: ObservableCollection&lt;student&gt;
+{
+static int i;
+public Students()
+{
+Update();
+}
+public void Update()
+{
+for (i = 0; i &amp;lt; 10; i++)
+{
+Student s = new Student();
+s.Age = i * 5;
+s.Name = &quot;Student_&quot; + i.ToString();
+this.Add(s);
+}
+}
+}
+`
+
+
+And on the button click we can give
+
+
+&lt;blockquote&gt;`private void Button_Click(object sender, RoutedEventArgs e)
+{
+(this.DataContext as Students).Update();
+}`&lt;/blockquote&gt;
+
+
+But make sure that you've set the data context to a new instance of the Students class in the Constructor.
+
+
+&lt;blockquote&gt;`this.DataContext = new Students();`&lt;/blockquote&gt;
+
+
+in the constructor should do the trick.
+
+**Datatemplates and DataTriggers**
+
+Data Templates and Data Triggers are used to style data based on its contents and type. Consider the same student class as of above. The XAML for such a listbox would be as     &lt;listbox height=&quot; 200&quot; width=&quot; 200&quot; itemssource=&quot;{Binding}&quot;&gt;&lt;/listbox&gt;
+
+Now if we want to template the Listbox we can use data templates. Data templates allow templating of controls and provide a better user experience. To give a background to the listbox items we can code as
+
+
+&lt;blockquote&gt;`&lt;datatemplate datatype=&quot;{x:Type local:Student}&quot;&gt;
+&lt;border name=&quot;disco&quot; borderthickness=&quot;2&quot; borderbrush=&quot;Black&quot; background=&quot;Red&quot; padding=&quot;10&quot;&gt;
+&lt;textblock text=&quot;{Binding Path=Name}&quot; /&gt;
+&lt;/border&gt;
+&lt;/datatemplate&gt;
+`&lt;/blockquote&gt;
+
+
+This allows templating of the objects of the class Student. We can also template an element based on its content. For that we use data triggers. The following code implements data triggers to the above code and changes the background property of elements with value &quot;Student_3&quot; to yellow.
+
+
+&lt;blockquote&gt;`
+&lt;datatemplate datatype=&quot;{x:Type local:Student}&quot;&gt;
+&lt;border name=&quot;disco&quot; borderthickness=&quot;2&quot; borderbrush=&quot;Black&quot; background=&quot;Red&quot; padding=&quot;10&quot;&gt;
+&lt;textblock text=&quot;{Binding Path=Name}&quot; /&gt;
+&lt;/border&gt;
+&lt;datatemplate.triggers&gt;
+&lt;datatrigger binding=&quot;{Binding Name}&quot; value=&quot;Student_3&quot;&gt;
+&lt;setter targetname=&quot;disco&quot; property=&quot;Background&quot; value=&quot;Yellow&quot; /&gt;
+&lt;/datatrigger&gt;
+&lt;/datatemplate.triggers&gt;
+&lt;/datatemplate&gt;`&lt;/blockquote&gt;
+
+
+**Datatemplate Selectors**
+
+Data template selectors allow switching of data template based on the data content of the object. Consider a case when you want yellow background for integer values higher than a particular value and blue background the rest of the values in your listbox. For such situations we need to create a DataTemplateSelector class inherits from `DataTemplateSelectorClass`. It should also implement a function called ` DataTemplate SelectTemplate(object item, DependencyObject container)` and should return a datatemplate which may be defined in the some resource dictionary. For example
+
+
+&lt;blockquote&gt;` return Window.FindResource(&quot;DataTemplateName&quot;) as DataTemplate;`&lt;/blockquote&gt;
+
+
+In XAML define the data templates in the any of resources dictionary in scope, create an instance of the class as we've discussed above and give that as the datatemplate in Listbox template property.
+&lt;/student&gt;&lt;/blockquote&gt;
+</description>
+        <pubDate>Fri, 29 Aug 2014 11:33:48 +0530</pubDate>
+        <link>http://blueasterisk.github.io/blog//2014/08/29/databinding-in-wpf-part-ii.html</link>
+        <guid isPermaLink="true">http://blueasterisk.github.io/blog//2014/08/29/databinding-in-wpf-part-ii.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>DataBinding In WPF </title>
+        <description>&lt;p&gt;While the MSDN has provided an elaborate article on data binding in WPF (you can find that &lt;a href=&quot;http://msdn.microsoft.com/en-us/library/ms752347.aspx&quot;&gt;here&lt;/a&gt;), this is my attempt to understand what data binding is and how it is done in WPF. Since this is a vast topic let me just break it down to the main topics in data binding.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Introduction to Data Binding  &lt;/li&gt;
+  &lt;li&gt;Binding Modes  &lt;/li&gt;
+  &lt;li&gt;Binding to Source  &lt;/li&gt;
+  &lt;li&gt;The UpdateSourceTrigger Property  &lt;/li&gt;
+  &lt;li&gt;Converters in Data Binding  &lt;/li&gt;
+  &lt;li&gt;Multi Binding  &lt;/li&gt;
+  &lt;li&gt;Validation  &lt;/li&gt;
+  &lt;li&gt;Binding to Non-DP&lt;br /&gt;
+9. Binding to Collections  &lt;/li&gt;
+  &lt;li&gt;Datatemplates and Data triggers  &lt;/li&gt;
+  &lt;li&gt;DataTemplate Selectors&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Since this is quite a large. Topics after UpdateSourceTrigger will be explained in another post.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. Introduction to Data Binding.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The Main aspect of Data Binding is to interact with data elements and establish a connection between the different properties in WPF. Properties in .NET environment are called CLR properties. Also the UI element to which a CLR property is bound to is called a dependency property. Dependency properties are one of the major aspects of WPF. These are the properties that are registered with the dependency property register. They contain the basic Measure and Arrange overrides that a UI element must do while its value changes in order to reflect on its measurement and arrangement in the UI. So dependency properties can be bound to one another or to a CLR property. The restriction being that the target property in data binding should always be a dependency property. If you think about it, that makes sense right? The target should always be able to handle its changes on its own so as to reflect itself in the UI. Hence all data binding targets should be dependency properties. There are more important stuff about data binding that needs to be addressed. We’ll get to them as we go forward with each topic.&lt;/p&gt;
+
+&lt;p&gt;**Simple Data Binding **&lt;/p&gt;
+
+&lt;p&gt;Data Binding between UI elements&lt;/p&gt;
+
+&lt;p&gt;For this part I’m going to use XAML which is a simple markup language that’s used to write the UI part of most windows applications. You can try these in Microsoft Visual Studio or any XAML editors like XAMLPAD.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;  
+&amp;lt;Slider Name=&quot;mySlider&quot; Value=&quot;20&quot; Minimum=&quot;0&quot; Maximum=&quot;100&quot; Height=&quot; 50&quot; /&amp;gt;  
+&amp;lt;TextBlock Name=&quot;tb&quot; Text=&quot;{Binding ElementName=mySlider, Path=Value, Mode=OneWay}&quot;/&amp;gt;  
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Here we have two elements, a slider named mySlider and a textblock called tb. The Textproperty of the textbox is bound to the Valueproperty of the slider. As you can see the binding is always set at the target of data binding. Since here we are binding between two UI elements, in the binding statement ElementName and Path are mentioned. Path need not be explicitly mentioned. Ie, we can write the above statement as&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;  
+&amp;lt;TextBlock Name=&quot;tb&quot; Text=&quot;{Binding Value, ElementName=mySlider, Mode=OneWay}&quot;/&amp;gt;  
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You can always do this binding in the code. One method using Binding class is as follows&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;  
+Binding binding = new Binding(&quot;Value&quot;);  
+binding.ElementName = &quot;mySlider&quot;;  
+tb.SetBinding(TextBox.TextProperty, binding);  
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Binding Modes&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If you look at the XAML code above you can see a property named Mode being set during binding. Mode defines the nature of the data binding scenario. Mode can take the following values&lt;/p&gt;
+
+&lt;p&gt;1.Default&lt;br /&gt;
+2.OneTime&lt;br /&gt;
+3.OneWay&lt;br /&gt;
+4.OneWayToSource&lt;br /&gt;
+5.TwoWay&lt;/p&gt;
+
+&lt;p&gt;The operation of default is obvious. There are default binding modes defined for most of the dependency properties in WPF. OneTime binding works only once. Binding clears after onetime execution. OneWay declares that the binding is one way. I.e. it causes changes to the source property to automatically update the target property but the source does not get changed. OneWayToSource does the opposite of OneWay. i.e. causes changes to the target property to automatically update the source property but the target does not get changed. Operation of TwoWay can be understood from the name itself. Source or target get updated while the other one changes.&lt;/p&gt;
+
+&lt;p&gt;** Binding To Source**&lt;/p&gt;
+
+&lt;p&gt;In most scenarios we’ll be using data binding to handle the changes on one element due to another element. But at times we’ll need to bind a property to another one on the same element or to its parent element. At such requirements binding to source is useful.&lt;/p&gt;
+
+&lt;p&gt;Consider a case where you’d want create a textbox whose width changes as the value inside it changes. We can do that either in code as&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;  
+Binding binding = new Binding(&quot;Text&quot;);  
+binding.ElementName = &quot;tb&quot;;  
+tb.SetBinding(TextBox.WidthProperty, binding);  
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;or in XAML as&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;  
+&amp;lt;TextBox Text=&quot;{Binding RelativeSource={RelativeSource Self}, Path=Width}&quot; Width=&quot;100&quot;/&amp;gt;  
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;RelativeSource values can be modified to access the values of its ancestor or a templatedparent.&lt;/p&gt;
+
+&lt;p&gt;I’d like to add an extra point about template binding here. TemplateBinding is one of the methods used in WPF template definition to gain controls to access the values of its parent. When writing different control templates for different controls, sometimes we’d want the value of a template element to vary as the templated element varies.&lt;/p&gt;
+
+&lt;p&gt;`&lt;br /&gt;
+&amp;lt;Button Height=&quot; 50&quot; Width=&quot; 100&quot;&amp;gt;  &lt;/p&gt;
+&lt;button.template&gt;  
+&lt;controltemplate&gt;  
+&lt;ellipse fill=&quot;Red&quot; height=&quot;{TemplateBinding Height}&quot; width=&quot;{TemplateBinding Width}&quot; /&gt;  
+&lt;/controltemplate&gt;  
+&lt;/button.template&gt;
+&lt;p&gt;&amp;lt;/Button&amp;gt;&lt;br /&gt;
+`&lt;/p&gt;
+
+&lt;p&gt;Here the values of the parent are being accessed by the rectangle using templatebinding. It is to be noted that this is a binding done from parent to child element. The value is being accessed by the child element. If we wanted binding in both ways we’d use sourcebinding in which we’ll give RelativeSource={RelativeSource TemplatedParent}. Binding mode can also be specified here to control the flow.&lt;br /&gt;
+If you try the first two codes in Binding To Source, you’ll see that the XAML version requires you to change the focus in order to reflect the change in the UI. This is because by default the binding UpdateSourceTrigger for a textbox is set to “LostFocus”. Lets look at what UpdateSourceTrigger does in the next topic.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UpdateSourceTrigger Property&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Consider a situation where we have two text boxes and we are creating one mimicking the other. This can be written in XAML as&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;  
+&amp;lt;TextBox x:Name=&quot;txtbox&quot;/&amp;gt;  
+&amp;lt;TextBox Text=&quot;{Binding ElementName=txtbox, Path=Text, Mode=TwoWay}&quot;/&amp;gt;  
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Again we encounter the need to change the focus at target for the binding to take place between target and source. To make this work, lets set the UpdateSourceTrigger&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;  
+&amp;lt;TextBox x:Name=&quot;txtbox&quot;/&amp;gt;  
+&amp;lt;TextBox Text=&quot;{Binding ElementName=txtbox, Path=Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}&quot;/&amp;gt;  
+&lt;/code&gt; &lt;/p&gt;
+
+&lt;p&gt;This would give us two text boxes one reflecting the other.&lt;/p&gt;
+
+&lt;p&gt;In the case of two way binding sometimes we need to specify the conditions when the source data is to be updated. For such requirements UpdateSourceTrigger values are set. UpdateSourceTrigger is used in data binding scenarios to specify when the changes in the target property should reflect in the source. It can have the following values&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Default&lt;/li&gt;
+  &lt;li&gt;Explicit&lt;/li&gt;
+  &lt;li&gt;LostFocus&lt;/li&gt;
+  &lt;li&gt;PropertyChanged&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;PropertyChanged binds the data as soon as there is any change in the target. LostFocus binds the data from target to source when the target goes out of focus. This will be useful when we wish to grab data from a field when user enters another field. Explicit method tells the CLR that the binding will take place explicitly. Suppose we want to bind a textbox TextProperty to a TextBlock TextProperty on a button click. In such situations UpdateSourceTrigger=Explicit is used. We’ll see how explicit calls are made to bind data.&lt;/p&gt;
+
+&lt;p&gt;XAML&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;  
+&amp;lt;TextBox x:Name=&quot;txtbox&quot;/&amp;gt;  
+&amp;lt;TextBox x:Name=&quot;txtbox2&quot; Text=&quot;{Binding ElementName=txtbox, Path=Text, UpdateSourceTrigger=Explicit, Mode=TwoWay}&quot;/&amp;gt;  
+&amp;lt;Button Click=&quot;Button_Click&quot;&amp;gt;Update&amp;lt;/Button&amp;gt;&lt;/code&gt;
+&amp;gt; 
+&amp;gt; &lt;/p&gt;
+
+&lt;p&gt;C#&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;  
+private void Button_Click(object sender, RoutedEventArgs e)  
+{  
+BindingExpression be = txtbox2.GetBindingExpression(TextBox.TextProperty);  
+be.UpdateSource();  
+}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In the above example the button click updates the source.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 27 Aug 2014 13:50:03 +0530</pubDate>
+        <link>http://blueasterisk.github.io/blog//2014/08/27/databinding-in-wpf.html</link>
+        <guid isPermaLink="true">http://blueasterisk.github.io/blog//2014/08/27/databinding-in-wpf.html</guid>
+        
+        <category>Data Binding</category>
+        
+        <category>WPF</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Routed Events in WPF</title>
+        <description>&lt;p&gt;Routed Events are one of the key concepts of WPF. It enables events to be handled at parent levels. Routed events can be handled at Parent levels of its Visual Tree. Consider a case when you have a custom grid filled with two rectangles and you’d want to initiate a handler when  you press the on any element of the grid. If routing wasn’t there you’d have to write click event handles to both the rectangles and direct them to a single handler. If the grid consisted of complex graphic elements the task would be tedious. But since WPF supports Routed Events we can write handlers on the grid control itself and it’d be able to catch any events happening inside. That is the event can be handled at parent level of the element raising the event. This is the key concept of routed events&lt;/p&gt;
+
+&lt;p&gt;Let’s see the different Events in WPF in detail. There are 3 types of events in WPF.&lt;/p&gt;
+
+&lt;p&gt;1.Direct Events&lt;/p&gt;
+
+&lt;p&gt;2.Tunneled Events&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Bubbled Events&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Direct Events&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Direct Events are similar to the normal CLR events in C#. They are defined for an object and it is capable of raising the event by itself. Event handlers are written on the element raising the event itself.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tunneled Events.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Tunneled events are one of the routed events present in WPF. Consider a case when a grid containing a button has a button click event at the button level. The first event handler that is being fired is not the event handler at the button level, but the PreviewMouseLeftKeyDown event at the grid level. Ie, The event can be handled even before reaching the event triggering element. This concept can be used in many ways. Consider a situation where you want only some of the characters entered from the keyboard to be reflected in your textbox. You can set event handled parameter to true in a  PreviewKeyDown Event and thereby cancelling the event from taking place at all. Now Lets see how a Preview event is written in XAML and C#&lt;/p&gt;
+
+&lt;p&gt;`&lt;/p&gt;
+
+&lt;grid name=&quot;grid&quot; uielement.previewmouseleftbuttondown=&quot;grid_TunnelHandler&quot;&gt;
+&lt;rectangle previewmouseleftbuttondown=&quot;Rect_TunnelHandler&quot; height=&quot;100&quot; width=&quot;100&quot; /&gt;&lt;/grid&gt;
+
+&lt;p&gt;`&lt;/p&gt;
+
+&lt;p&gt;Here first the grid_TunnelHandler is fired first and  then Rect_TunnelHandler. The C# Code for the event handlers will be as&lt;/p&gt;
+
+&lt;p&gt;`&lt;/p&gt;
+
+&lt;p&gt;private void Rect_TunnelHandler(object sender, MouseButtonEventArgs e)
+{
+}&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+At any level we can set
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+
+  &lt;p&gt;e.handled=true;&lt;/p&gt;
+
+  &lt;p&gt;`&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;to handle the event from taking place.&lt;/p&gt;
+
+&lt;p&gt;Now consider a situation where we’d want to make the routing to continue even if it has a e.handled value set to true. For this we have to go back to C# and write the handler ourselves.&lt;/p&gt;
+
+&lt;p&gt;The method to add a handler is as
+`
+grid.AddHandler(UIElement.PreviewMouseLeftButtonDown, new RoutedEventHandler(grid_TunnelHandler), (bool) ContinueIfHandled);
+If the final parameter is set to true then the event will continue routing even if e.Handled is set  to true.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Registering A Routed Event&lt;/strong&gt;``
+`
+public static readonly RoutedEvent MyRoutedEvent=EventManager.RegisterRoutedEvent(“AnyNameToReferInXaml”, RoutingStrategy.Bubble/Tunneled, typeof(EventHandlerFunction),typeof(ParentClass));`
+A custom routed event can be registered in the WPF Routed events list as above.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 28 Jul 2014 18:09:19 +0530</pubDate>
+        <link>http://blueasterisk.github.io/blog//2014/07/28/routed-events-in-wpf.html</link>
+        <guid isPermaLink="true">http://blueasterisk.github.io/blog//2014/07/28/routed-events-in-wpf.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Intro</title>
+        <description>&lt;p&gt;WPF , previously known as ‘Avalon’ was first released along with .NET framework 3.0 for rendering user interfaces. It uses DirectX which enabled a much better user experience than older GDI systems. WPF applications are developed with the help of XAML, an XML based markup language. XAML stands for eXtensible Application Markup Language. It defines the UI elements and their alignment and can also work with a C# backend.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 27 Jul 2014 09:48:32 +0530</pubDate>
+        <link>http://blueasterisk.github.io/blog//2014/07/27/intro.html</link>
+        <guid isPermaLink="true">http://blueasterisk.github.io/blog//2014/07/27/intro.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Post #1 : Preface</title>
+        <description>&lt;p&gt;Well, I thought of starting this blog as a personal reference for the time. In the following blogs I’ll go through the fundamentals of Windows Presentation Foundation. After which I’ll share anything and everything I find interesting.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 27 Jul 2014 09:21:30 +0530</pubDate>
+        <link>http://blueasterisk.github.io/blog//2014/07/27/post-1-preface.html</link>
+        <guid isPermaLink="true">http://blueasterisk.github.io/blog//2014/07/27/post-1-preface.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
