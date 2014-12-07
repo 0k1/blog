@@ -6,7 +6,8 @@ markdown: redcarpet
 highlighter: pygments
 logo: false
 paginate: 15
-baseurl: 
+url: http://blueasterisk.github.io
+baseurl: /blog
 domain_name: ''
 
 # Details for the RSS feed generator
