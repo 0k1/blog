@@ -6,7 +6,7 @@ markdown: redcarpet
 highlighter: pygments
 logo: false
 paginate: 15
-baseurl: /blog
+baseurl: 
 domain_name: ''
 
 # Details for the RSS feed generator
