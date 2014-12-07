@@ -2,7 +2,7 @@ name: Blog by Arun Raj
 description: Blogging about stuffs
 meta_description: "theblueasterisk"
 
-markdown: redcarpet
+markdown: kramdown
 highlighter: pygments
 logo: false
 paginate: 15
