@@ -8,6 +8,10 @@ baseurl: "/blog/" # the subpath of your site, e.g. /blog/
 url: "http://blueasterisk.github.io" # the base hostname & protocol for your site
 twitter_username: _raj9
 github_username:  blueasterisk
-
 # Build settings
 markdown: kramdown
+
+# Details for the RSS feed generator
+url:            'blueasterisk.github.io'
+author:         'Arun Raj'
+
