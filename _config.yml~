@@ -1,0 +1,27 @@
+# Site settings
+title: theblueasterisk
+email: arunrajrs92@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Stuff that i find interesting
+meta_description: "web log of arun"
+baseurl: "/blog/" # the subpath of your site, e.g. /blog/
+url: "http://blueasterisk.github.io" # the base hostname & protocol for your site
+twitter_username: _raj9
+github_username:  blueasterisk
+
+<<<<<<< HEAD
+# Build settings
+markdown: kramdown
+=======
+markdown: kramdown
+highlighter: pygments
+logo: false
+paginate: 15
+url: http://blueasterisk.github.io
+baseurl: /blog
+domain_name: ''
+
+# Details for the RSS feed generator
+url:            'blueasterisk.github.io'
+author:         'Arun Raj'
+>>>>>>> 408e153efebc94bb6f20f843b48248139deb0e30
