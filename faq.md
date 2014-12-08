@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Help / FAQ
+title: Contact me 
 ---
 
 
+Just drop a mail at arunrajrs92@gmail.com. :)
