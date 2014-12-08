@@ -1,6 +1,5 @@
 ---
 author: asterisk123
-comments: false
 date: 2014-12-29 03:51:30+00:00
 layout: post
 slug: post-1-preface
