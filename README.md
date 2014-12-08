@@ -1,3 +1,4 @@
-# blueasterisk weblog by Arun
+##blueasterisk weblog by Arun
 
-##Powered by Jekyll and Harmoney 
+
+Powered by Jekyll and Harmony 
