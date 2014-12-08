@@ -5,6 +5,5 @@ date: 2014-12-29 03:51:30+00:00
 layout: post
 slug: post-1-preface
 title: 'Test'
-wordpress_id: 7
 ---
 Test Post From NOTEPAD
