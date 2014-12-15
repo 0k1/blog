@@ -1,3 +1,9 @@
+---
+author: asterisk123
+date: 2014-12-9 12:00:30+00:00
+layout: post
+title: 'XAML Resources'
+---
 Types of resources
 ==================
 
