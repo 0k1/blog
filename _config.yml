@@ -1,23 +1,40 @@
-# Jekyll Defaults
-title: Little Big Blue
-description: A small and simple site I made to test out Jekyll.
-baseurl: "" # the subpath of your site, e.g. /blog
+# # # # # # # #
+#   K i k o   #
+# # # # # # # #
 
-url: "http://localhost:3000"
-github: http://github.com/ITSJOHNCENA
+# Basic
+name:               "Kiko"
 
-markdown: redcarpet
-highlighter: rouge
-permalink: /post/:title/
-paginate: 4
-gems: [jekyll-paginate]
-paginate_path: "/page:num"
-rss_path: feed.xml
-tags_path: tag.html
-navigation:
-- text: About
-  url: /about/
-- text: Archives
-  url: /archives/
-- text: Tags
-  url: /tags/
+# URL
+baseurl:            "/Kiko"
+#baseurl:            "" #For Root Domain
+permalink:          /:year/:month/:day/:title.html
+
+# Markdown
+markdown:           rdiscount
+
+# Navigation
+nav:
+  - name:           "About"
+    href:           "//gfjaru.github.io/Kiko/about"
+  - name:           "Download"
+    href:           "//github.com/gfjaru/Kiko/releases"
+
+# Sass
+sass:
+  style:            :compressed
+
+# Scopes
+defaults:
+  -
+    scope:
+      path:         ""
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      path:         ""
+      type:         "posts"
+    values:
+      layout:       "post"
