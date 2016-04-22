@@ -1,9 +1,4 @@
-# # # # # # # #
-#   K i k o   #
-# # # # # # # #
-
-# Basic
-name:               "Kiko"
+name:               "//blog/"
 
 # URL
 baseurl:            "/blog"
@@ -15,9 +10,9 @@ markdown:           rdiscount
 
 # Navigation
 nav:
-  - name:           "About"
-    href:           "//gfjaru.github.io/Kiko/about"
-  - name:           "Download"
+  - name:           "Home"
+    href:           "//arunraj.xyz"
+  - name:           "Download this template"
     href:           "//github.com/gfjaru/Kiko/releases"
 
 # Sass
