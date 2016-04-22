@@ -44,7 +44,6 @@ a {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: .5rem;
-  font-weight: 600;
   line-height: 1.1;
   color: #333;
   letter-spacing: -.025rem;
@@ -291,7 +290,6 @@ tbody tr:nth-child(odd) th {
   &-title--small {
     margin-bottom: .75rem;
     font-size: .75rem;
-    font-weight: 600;
     text-transform: uppercase;
     
     a {
