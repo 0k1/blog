@@ -347,7 +347,8 @@ tbody tr:nth-child(odd) th {
 .list {
   &-post-title {
     margin-bottom: .25rem;
-    
+    font-weight: 400;
+    font-size: .75rem; 
     a {
       color: #333;
       
