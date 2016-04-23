@@ -12,12 +12,12 @@ While using browsers when we get to a part where we are to enter a data into a f
 This is where I get bugged by Instagram.
 The Log In page of Instagram web looks like this
 
-![Instagram](/assets/img/instagram.png)
+![Instagram](http://arun619.github.io/blog/assets/img/instagram.png)
 
 If one were to tab navigate through the user name and password fields he/she would reach the forgot your password link rather than the log in button.  Of course pressing enter at the password field does let you log in but if a user enters both and presses tab the next thing expected is the log in button which unfortunately is placed after the forgot your password ? link.
 
 Facebook deals with this quite neatly
 
-![facebook](/assets/img/facebook.png)
+![facebook](http://arun619.github.io/blog/assets/img/facebook.png)
 
-In their log in page if one were to navigate using tab, he/she will reach the Log in button after the password field. Neatly skipping the “Keep me logged in” check box. This is a neat way of solving the issue if the button position can’t be shifted to left.
+In their log in page if one were to navigate using tab, he/she will reach the Log in button after the password field. Neatly skipping the “Keep me logged in” check box. This is a neat way of solving the issue if the button position can’t be shifted to left
