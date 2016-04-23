@@ -89,8 +89,8 @@ grid.AddHandler(UIElement.PreviewMouseLeftButtonDown, new RoutedEventHandler(gri
 If the final parameter is set to true then the event will continue routing even if e.Handled is set  to true.
 
 **Registering A Routed Event**
-`
+```
 public static readonly RoutedEvent MyRoutedEvent=EventManager.RegisterRoutedEvent("AnyNameToReferInXaml", RoutingStrategy.Bubble/Tunneled, typeof(EventHandlerFunction),typeof(ParentClass));
-`
+```
 
 A custom routed event can be registered in the WPF Routed events list as above.
