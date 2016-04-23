@@ -73,11 +73,8 @@ private void Rect_TunnelHandler(object sender, MouseButtonEventArgs e)
 `
 At any level we can set
 `
-
-> 
-> e.handled=true;
-> 
-> `
+e.handled=true;
+`
 
 
 to handle the event from taking place.

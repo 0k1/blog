@@ -1,5 +1,5 @@
 ---
-author: asterisk123
+author: Arun Raj
 date: 2014-12-8 12:00:30+00:00
 layout: post
 slug: test-post-from-notepad
