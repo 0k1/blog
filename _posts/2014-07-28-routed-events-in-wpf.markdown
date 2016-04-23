@@ -1,5 +1,5 @@
 ---
-author: asterisk123
+author: Arun Raj
 comments: true
 date: 2014-07-28 12:39:19+00:00
 layout: post
@@ -28,7 +28,7 @@ Let's see the different Events in WPF in detail. There are 3 types of events in 
 
 
 
-3. Bubbled Events
+3.Bubbled Events
 
 
 
@@ -53,11 +53,11 @@ Tunneled events are one of the routed events present in WPF. Consider a case whe
 
 
 `
-
 <Grid Name="grid" UIElement.PreviewMouseLeftButtonDown="grid_TunnelHandler">
-<Rectangle PreviewMouseLeftButtonDown="Rect_TunnelHandler" Height="100" Width="100"/></Grid>
-
+<Rectangle PreviewMouseLeftButtonDown="Rect_TunnelHandler" Height="100" Width="100"/>
+</Grid>
 `
+
 
 
 Here first the grid_TunnelHandler is fired first and  then Rect_TunnelHandler. The C# Code for the event handlers will be as
@@ -65,16 +65,16 @@ Here first the grid_TunnelHandler is fired first and  then Rect_TunnelHandler. 
 
 
 `
-
 private void Rect_TunnelHandler(object sender, MouseButtonEventArgs e)
 {
 }
+`
 
-`
 At any level we can set
-`
+
+```
 e.handled=true;
-`
+```
 
 
 to handle the event from taking place.
@@ -84,9 +84,13 @@ Now consider a situation where we'd want to make the routing to continue even if
 The method to add a handler is as
 `
 grid.AddHandler(UIElement.PreviewMouseLeftButtonDown, new RoutedEventHandler(grid_TunnelHandler), (bool) ContinueIfHandled);
+`
+
 If the final parameter is set to true then the event will continue routing even if e.Handled is set  to true.
 
-**Registering A Routed Event**``
+**Registering A Routed Event**
 `
-public static readonly RoutedEvent MyRoutedEvent=EventManager.RegisterRoutedEvent("AnyNameToReferInXaml", RoutingStrategy.Bubble/Tunneled, typeof(EventHandlerFunction),typeof(ParentClass));`
+public static readonly RoutedEvent MyRoutedEvent=EventManager.RegisterRoutedEvent("AnyNameToReferInXaml", RoutingStrategy.Bubble/Tunneled, typeof(EventHandlerFunction),typeof(ParentClass));
+`
+
 A custom routed event can be registered in the WPF Routed events list as above.

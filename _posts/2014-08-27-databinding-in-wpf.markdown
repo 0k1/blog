@@ -140,9 +140,9 @@ XAML
 `  
 <TextBox x:Name="txtbox"/>  
 <TextBox x:Name="txtbox2" Text="{Binding ElementName=txtbox, Path=Text, UpdateSourceTrigger=Explicit, Mode=TwoWay}"/>  
-<Button Click="Button_Click">Update</Button>`
-> 
-> 
+<Button Click="Button_Click">Update</Button>
+`
+
 
 C#
 
@@ -151,7 +151,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 {  
 BindingExpression be = txtbox2.GetBindingExpression(TextBox.TextProperty);  
 be.UpdateSource();  
-}`
-
+}
+`
 
 In the above example the button click updates the source.

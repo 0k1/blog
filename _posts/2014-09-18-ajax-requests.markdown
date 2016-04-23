@@ -19,7 +19,8 @@ The codes below are some basic one's that I've tried while learning the fundame
 **GET alert using ajax.**
 
 
-`function Alert(params) {
+```
+function Alert(params) {
 var url="http://localhost:59741/api/";//Define url for your api here
 xmlhttprequest = new XMLHttpRequest();
 xmlhttprequest.onreadystatechange = function () {
@@ -29,7 +30,8 @@ alert(xmlhttprequest.responseText);
 }
 xmlhttprequest.open("GET", url+ params, true);
 xmlhttprequest.send();
-}`
+}
+```
 
 
 above Alert function accepts parameters which refer to api endpoints to do a normal get operation from the webservice
@@ -37,7 +39,8 @@ above Alert function accepts parameters which refer to api endpoints to do a nor
 **POST using Ajax**
 
 
-`function PostDetails(params) {
+```
+function PostDetails(params) {
 var url="http://localhost:59741/api/";//Define url for your api here
 xmlhttprequest = new XMLHttpRequest();
 xmlhttprequest.onreadystatechange = function () {
@@ -48,4 +51,5 @@ alert("Post Success");
 xmlhttprequest.open("POST", url+params, true);
 xmlhttprequest.setRequestHeader("Content-Type", "application/json"); // I'm using JSON format in this case
 xmlhttprequest.send('<json data>');//fill the data in JSON here
-}`
+}
+```
