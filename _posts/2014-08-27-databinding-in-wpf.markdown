@@ -30,32 +30,26 @@ Since this is quite a large. Topics after UpdateSourceTrigger will be explained 
 
 The Main aspect of Data Binding is to interact with data elements and establish a connection between the different properties in WPF. Properties in .NET environment are called CLR properties. Also the UI element to which a CLR property is bound to is called a dependency property. Dependency properties are one of the major aspects of WPF. These are the properties that are registered with the dependency property register. They contain the basic Measure and Arrange overrides that a UI element must do while its value changes in order to reflect on its measurement and arrangement in the UI. So dependency properties can be bound to one another or to a CLR property. The restriction being that the target property in data binding should always be a dependency property. If you think about it, that makes sense right? The target should always be able to handle its changes on its own so as to reflect itself in the UI. Hence all data binding targets should be dependency properties. There are more important stuff about data binding that needs to be addressed. We'll get to them as we go forward with each topic.
 
-**Simple Data Binding **
+**Simple Data Binding.**
 
-Data Binding between UI elements
+***Data Binding between UI elements***
 
 For this part I'm going to use XAML which is a simple markup language that's used to write the UI part of most windows applications. You can try these in Microsoft Visual Studio or any XAML editors like XAMLPAD.
 
-`  
-<Slider Name="mySlider" Value="20" Minimum="0" Maximum="100" Height=" 50" />  
-<TextBlock Name="tb" Text="{Binding ElementName=mySlider, Path=Value, Mode=OneWay}"/>  
-`
+    <Slider Name="mySlider" Value="20" Minimum="0" Maximum="100" Height=" 50"/>TextBlock Name="tb" Text="{Binding ElementName=mySlider, Path=Value,Mode=OneWay}"/>
+
 
 
 Here we have two elements, a slider named mySlider and a textblock called tb. The Textproperty of the textbox is bound to the Valueproperty of the slider. As you can see the binding is always set at the target of data binding. Since here we are binding between two UI elements, in the binding statement ElementName and Path are mentioned. Path need not be explicitly mentioned. Ie, we can write the above statement as
 
-`  
-<TextBlock Name="tb" Text="{Binding Value, ElementName=mySlider, Mode=OneWay}"/>  
-`
+    <TextBlock Name="tb" Text="{Binding Value, ElementName=mySlider, Mode=OneWay}"/>
 
 
 You can always do this binding in the code. One method using Binding class is as follows
 
-`  
-Binding binding = new Binding("Value");  
-binding.ElementName = "mySlider";  
-tb.SetBinding(TextBox.TextProperty, binding);  
-`
+    Binding binding = new Binding("Value");
+    binding.ElementName = "mySlider";
+    tb.SetBinding(TextBox.TextProperty, binding);
 
 
 
@@ -71,38 +65,31 @@ If you look at the XAML code above you can see a property named Mode being set d
 
 The operation of default is obvious. There are default binding modes defined for most of the dependency properties in WPF. OneTime binding works only once. Binding clears after onetime execution. OneWay declares that the binding is one way. I.e. it causes changes to the source property to automatically update the target property but the source does not get changed. OneWayToSource does the opposite of OneWay. i.e. causes changes to the target property to automatically update the source property but the target does not get changed. Operation of TwoWay can be understood from the name itself. Source or target get updated while the other one changes.
 
-** Binding To Source**
+**Binding To Source**
 
 In most scenarios we'll be using data binding to handle the changes on one element due to another element. But at times we'll need to bind a property to another one on the same element or to its parent element. At such requirements binding to source is useful.
 
 Consider a case where you'd want create a textbox whose width changes as the value inside it changes. We can do that either in code as
 
-`  
-Binding binding = new Binding("Text");  
-binding.ElementName = "tb";  
-tb.SetBinding(TextBox.WidthProperty, binding);  
-`
+    Binding binding = new Binding("Text");  
+    binding.ElementName = "tb";  
+    tb.SetBinding(TextBox.WidthProperty, binding);
 
 or in XAML as
 
-`  
-<TextBox Text="{Binding RelativeSource={RelativeSource Self}, Path=Width}" Width="100"/>  
-`
+    <TextBox Text="{Binding RelativeSource={RelativeSource Self}, Path=Width}" Width="100"/>  
+
 
 
 RelativeSource values can be modified to access the values of its ancestor or a templatedparent.
 
 I'd like to add an extra point about template binding here. TemplateBinding is one of the methods used in WPF template definition to gain controls to access the values of its parent. When writing different control templates for different controls, sometimes we'd want the value of a template element to vary as the templated element varies.
 
-`  
-<Button Height=" 50" Width=" 100">  
-<Button.Template>  
-<ControlTemplate>  
-<Ellipse Fill="Red" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" />  
-</ControlTemplate>  
-</Button.Template>  
-</Button>  
-`
+    <Button Height=" 50" Width=" 100">  
+    <Button.Template>  
+    <ControlTemplate>  
+    <Ellipse Fill="Red" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"/></ControlTemplate></Button.Template> </Button>  
+
 
 Here the values of the parent are being accessed by the rectangle using templatebinding. It is to be noted that this is a binding done from parent to child element. The value is being accessed by the child element. If we wanted binding in both ways we'd use sourcebinding in which we'll give RelativeSource={RelativeSource TemplatedParent}. Binding mode can also be specified here to control the flow.  
 If you try the first two codes in Binding To Source, you'll see that the XAML version requires you to change the focus in order to reflect the change in the UI. This is because by default the binding UpdateSourceTrigger for a textbox is set to "LostFocus". Lets look at what UpdateSourceTrigger does in the next topic.
@@ -111,18 +98,13 @@ If you try the first two codes in Binding To Source, you'll see that the XAML ve
 
 Consider a situation where we have two text boxes and we are creating one mimicking the other. This can be written in XAML as
 
-`  
-<TextBox x:Name="txtbox"/>  
-<TextBox Text="{Binding ElementName=txtbox, Path=Text, Mode=TwoWay}"/>  
-`
-
+    <TextBox x:Name="txtbox"/>  
+    <TextBox Text="{Binding ElementName=txtbox, Path=Text, Mode=TwoWay}"/>  
 
 Again we encounter the need to change the focus at target for the binding to take place between target and source. To make this work, lets set the UpdateSourceTrigger
 
-`  
-<TextBox x:Name="txtbox"/>  
-<TextBox Text="{Binding ElementName=txtbox, Path=Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>  
-` 
+    <TextBox x:Name="txtbox"/>  
+    <TextBox Text="{Binding ElementName=txtbox, Path=Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>  
 
 This would give us two text boxes one reflecting the other.
 
@@ -137,21 +119,16 @@ PropertyChanged binds the data as soon as there is any change in the target. Los
 
 XAML
 
-`  
-<TextBox x:Name="txtbox"/>  
-<TextBox x:Name="txtbox2" Text="{Binding ElementName=txtbox, Path=Text, UpdateSourceTrigger=Explicit, Mode=TwoWay}"/>  
-<Button Click="Button_Click">Update</Button>
-`
-
+    <TextBox x:Name="txtbox"/>  
+    <TextBox x:Name="txtbox2" Text="{Binding ElementName=txtbox, Path=Text, UpdateSourceTrigger=Explicit, Mode=TwoWay}"/>  
+    <Button Click="Button_Click" Content="Update"/>
 
 C#
 
-`  
-private void Button_Click(object sender, RoutedEventArgs e)  
-{  
-BindingExpression be = txtbox2.GetBindingExpression(TextBox.TextProperty);  
-be.UpdateSource();  
-}
-`
+    private void Button_Click(object sender, RoutedEventArgs e)  
+    {  
+    BindingExpression be = txtbox2.GetBindingExpression(TextBox.TextProperty);
+    be.UpdateSource();  
+    }
 
 In the above example the button click updates the source.
