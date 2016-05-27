@@ -1,6 +1,6 @@
 ---
 author: Arun Raj
-date: 2016-05-27 12:39:30+00:00
+date: 2016-05-26 12:39:30+00:00
 layout: post
 slug: intro-to-hololens
 title: 'Intro to Hololens'
