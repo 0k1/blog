@@ -24,9 +24,9 @@ If I was to list the awesomeness of HL
 
 * Untethered Mixed Reality
 * [Windows 10 and its cool APIs](https://developer.microsoft.com/en-us/windows/getstarted/whats-new-windows-10) 
-  * _This is windows 10. Running on your head ! :D_ 
+  ** _This is windows 10. Running on your head ! :D_ 
 * Impressive spatial mapping
 * Spatial Audio.
-  * _This creates the feel that you'd want in a truely immersive device._
+  ** _This creates the feel that you'd want in a truely immersive device._
 * Unity
 * 
