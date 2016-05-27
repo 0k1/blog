@@ -9,7 +9,7 @@ title: 'Intro to Hololens'
 Microsoft HoloLens, the company's holographic, augmented reality headset, is a bold piece of hardware and the most exciting innovation in wearable tech yet !
 Microsoft’s efforts amount to the most impressive device I have had a chance to work with in a long time. The Hololens opens up a new path in interaction design and game development. In the following days I'll try to share my experience in working with HL and the problems that occured along the way. But first and foremost lets take look at the device and see what's under the hood that makes it the most impressive wearable tech yet !
 
-As a disclaimer I should point out that this device is not targeting the consumer market as of now and is still far from becoming one.
+![fenced-code-block][As a disclaimer I should point out that this device is not targeting the consumer market as of now and is still far from becoming one.]
 
 ![hololens](http://www.svethardware.cz/microsoft-windows-10-upgrade-zdarma-a-holografie/39882/img/body-1.43C0.jpg)
 
@@ -25,4 +25,5 @@ If I was to list the awesomeness of HL
 1. Untethered Mixed Reality
 2. [Windows 10 and its cool APIs](https://developer.microsoft.com/en-us/windows/getstarted/whats-new-windows-10) : _This is windows 10. Running on your head ! :D_ 
 3. Impressive spatial mapping
-4. Spatial Audio
+4. Spatial Audio. _This creates the feel that you'd want in a truely immersive device._
+5. 
