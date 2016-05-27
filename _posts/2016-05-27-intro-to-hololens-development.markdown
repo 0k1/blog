@@ -28,4 +28,4 @@ The HoloLens emulator is based on Hyper-V and uses RemoteFx for hardware acceler
 
 **Setting Up the Dev environment**
 
-Please go through [MSFT Developer portal for hololens](https://developer.microsoft.com/en-us/windows/holographic/install_the_tools) and install the tools mentioned to set up the dev environment. 
+The [MSFT Developer portal for hololens](https://developer.microsoft.com/en-us/windows/holographic/install_the_tools) has a neat documentation on how to install the tools and set up the dev environment. 
