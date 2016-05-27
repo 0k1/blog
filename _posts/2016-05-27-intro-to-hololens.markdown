@@ -7,7 +7,7 @@ title: 'Intro to Hololens'
 ---
 
 Microsoft HoloLens, the company's holographic, augmented reality headset, is a bold piece of hardware and the most exciting innovation in wearable tech yet !
-Microsoft’s efforts amount to the most impressive device I have had a chance to work with in a long time. The Hololens opens up a new path in interaction design and game development. In the following days I'll try to share my experience in working with HL and the problems that occured along the way. But first and foremost lets take look at the device and see what's under the hood that makes it the most impressive wearable tech yet !
+Microsoft’s efforts amount to the most impressive device I have had a chance to work with in a long time. The Hololens opens up a new path in interaction design and game development. In the following days I'll try to share my experience in working with HL and the problems that occurred along the way. But first and foremost lets take look at the device and see what's under the hood that makes it the most impressive wearable tech yet !
 
     As a disclaimer I should point out that this device is not targeting consumer market as of now and is still far from becoming one.
 
@@ -24,23 +24,23 @@ Now for the real question. How do the blend the digital and the real ?
  
  >>The HoloLens display is basically a set of transparent screens placed just in front of the eyes. Each eyepiece or screen lets light through and also shows digital content the way your monitor does. Each screen shows a slightly different image to create a stereoscopic illusion like the View Master toy does or 3D glasses do at 3D movies.
 
- For those who'd want more on the device's display I'd suggest reading these below
+ For those who'd want more on these kind of display I'd suggest reading these below
 
  *  [https://www.google.com/patents/US20130285885](https://www.google.com/patents/US20130285885)
  *  [https://www.google.com/patents/US20130207964](https://www.google.com/patents/US20130207964)
  *  [https://www.google.com/patents/US20130208362](https://www.google.com/patents/US20130208362)
 
->>HoloLens hardware specifications include 2GB of RAM, 64GB of flash storage, and Bluetooth and Wi-Fi connectivity. The Bluetooth support allows HoloLens owners to make use of a new Clicker accessory, included in the box, instead of the air tap gestures to navigate around. Microsoft says the entire HoloLens headset will weigh no more than 579 grams, and the battery will run for around two or three hours of active use. HoloLens is fully functional when it's charged over Micro USB, and the device will also have a standby time of two weeks. Its a bit disappointing that they didn't provide Type-C USB ports, but then again this is the first edition of HL.
+>>HoloLens hardware specifications include 2GB of RAM, 64GB of flash storage, and Bluetooth and Wi-Fi connectivity. The Bluetooth support allows HoloLens owners to make use of a new Clicker accessory, included in the box, instead of the air tap gestures to navigate around. Microsoft says the entire HoloLens headset will weigh no more than 579 grams, and the battery will run for around two or three hours of active use. HoloLens is fully functional when it's charged over Micro USB, and the device will also have a standby time of two weeks. It's a bit disappointing that they didn't provide Type-C USB ports, but then again this is the first edition of HL.
 
 I'll try to list the reason HL is so awesome.
 
 1. ##### Untethered Mixed Reality
 _No one has ever come close to something like the Hololens. Ever._
 2. ##### Windows 10 and its cool APIs 
-_This is windows 10, running on your head ! All the [API](https://developer.microsoft.com/en-us/windows/getstarted/whats-new-windows-10)'s that make win10 awesome work seemlessly in hololens as well._ 
+_This is windows 10, running on your head ! All the [API](https://developer.microsoft.com/en-us/windows/getstarted/whats-new-windows-10)'s that make win10 awesome work seamlessly in hololens as well._ 
 3. ##### Impressive spatial mapping
 _Spatial mapping gives hololens the ability to see its surroundings. This even works great [outdoors](https://www.youtube.com/watch?v=BC1k_18JUDk)_
 4. ##### Spatial Audio.
-_This creates the feel that you'd want in a truely immersive device. As TIME magazine said : [Holograms can be heard, not just seen](http://time.com/4190843/microsoft-hololens-demo-2016/)_
+_This creates the feel that you'd want in a truly immersive device. As TIME magazine said : [Holograms can be heard, not just seen](http://time.com/4190843/microsoft-hololens-demo-2016/)_
 5. ##### Unity for HL
 _Opting for such a universal solution to create applications for hololens gives tremendous opportunities for game developers and 3d artists to come around and create awesome interactions for HL_
