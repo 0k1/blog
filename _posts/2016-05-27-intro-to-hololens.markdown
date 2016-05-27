@@ -30,7 +30,7 @@ Now for the real question. How do the blend the digital and the real ?
  *  [https://www.google.com/patents/US20130207964](https://www.google.com/patents/US20130207964)
  *  [https://www.google.com/patents/US20130208362](https://www.google.com/patents/US20130208362)
 
->>HoloLens hardware specifications include 2GB of RAM, 64GB of flash storage, and Blue-tooth and Wi-Fi connectivity. The Blue-tooth support allows HoloLens owners to make use of a new Clicker accessory, included in the box, instead of the air tap gestures to navigate around. Microsoft says the entire HoloLens headset will weigh no more than 579 grams, and the battery will run for around two or three hours of active use. HoloLens is fully functional when it's charged over Micro USB, and the device will also have a standby time of two weeks. It's a bit disappointing that they didn't provide Type-C USB ports, but then again this is the first edition of HL.
+>>HoloLens hardware specifications include 2GB of RAM, 64GB of flash storage, and bluetooth and Wi-Fi connectivity. The bluetooth support allows HoloLens owners to make use of a new Clicker accessory, included in the box, instead of the air tap gestures to navigate around. Microsoft says the entire HoloLens headset will weigh no more than 579 grams, and the battery will run for around two or three hours of active use. HoloLens is fully functional when it's charged over Micro USB, and the device will also have a standby time of two weeks. It's a bit disappointing that they didn't provide Type-C USB ports, but then again this is the first edition of HL.
 
 I'll try to list the reasons HL is so awesome.
 
