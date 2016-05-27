@@ -22,10 +22,10 @@ Microsoft’s efforts amount to the most impressive device I have had a chance t
 
 If I was to list the awesomeness of HL
 
-1. #####Untethered Mixed Reality
-2. #####[Windows 10 and its cool APIs](https://developer.microsoft.com/en-us/windows/getstarted/whats-new-windows-10) 
+1. ##### Untethered Mixed Reality
+2. ##### [Windows 10 and its cool APIs](https://developer.microsoft.com/en-us/windows/getstarted/whats-new-windows-10) 
 _This is windows 10. Running on your head ! :D_ 
-3. #####Impressive spatial mapping
-4. #####Spatial Audio.
+3. ##### Impressive spatial mapping
+4. ##### Spatial Audio.
 _This creates the feel that you'd want in a truely immersive device. As time magazine said : Holograms can be heard, not just seen_
 5. ##### Unity
