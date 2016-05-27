@@ -40,7 +40,7 @@ _No one has ever come close to something like the Hololens. Ever._
 _This is windows 10, running on your head ! All the [API](https://developer.microsoft.com/en-us/windows/getstarted/whats-new-windows-10)'s that make win10 awesome, work seamlessly in hololens as well._ 
 3. ##### Impressive spatial mapping
 _Spatial mapping gives hololens the ability to see its surroundings. This even works great [outdoors](https://www.youtube.com/watch?v=BC1k_18JUDk)_
-4. ##### Spatial Audio.
+4. ##### Spatial Audio
 _This creates the feel that you'd want in a truly immersive device. As TIME magazine said : [Holograms can be heard, not just seen](http://time.com/4190843/microsoft-hololens-demo-2016/)_
 5. ##### Unity for HL
 _Opting for such a universal solution to create applications for hololens gives tremendous opportunities for game developers and 3D artists to come around and create awesome interactions for HL_
