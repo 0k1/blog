@@ -19,12 +19,12 @@ The HoloLens emulator is based on Hyper-V and uses RemoteFx for hardware acceler
 * CPU with 4 cores (or multiple CPU's with a total of 4 cores)
 * 8 GB of RAM or more
 * In the BIOS, the following features must be supported and enabled:
-    - Hardware-assisted virtualization
-    - Second Level Address Translation (SLAT)
-    - Hardware-based Data Execution Prevention (DEP)
+    Hardware-assisted virtualization,
+    Second Level Address Translation (SLAT),
+    Hardware-based Data Execution Prevention (DEP)
 * GPU (The emulator might work with an unsupported GPU, but will be significantly slower)
-    - DirectX 11.0 or later
-    - WDDM 1.2 driver or later
+     DirectX 11.0 or later,
+     WDDM 1.2 driver or later
 
 **Setting Up the Dev environment**
 
