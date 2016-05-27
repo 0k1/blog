@@ -30,15 +30,14 @@ Now for the real question. How do the blend the digital and the real ?
  *  [https://www.google.com/patents/US20130207964](https://www.google.com/patents/US20130207964)
  *  [https://www.google.com/patents/US20130208362](https://www.google.com/patents/US20130208362)
 
+>>HoloLens hardware specifications include 2GB of RAM, 64GB of flash storage, and Bluetooth and Wi-Fi connectivity. The Bluetooth support allows HoloLens owners to make use of a new Clicker accessory, included in the box, instead of the air tap gestures to navigate around. Microsoft says the entire HoloLens headset will weigh no more than 579 grams, and the battery will run for around two or three hours of active use. HoloLens is fully functional when it's charged over Micro USB, and the device will also have a standby time of two weeks. Its a bit disappointing that they didn't provide Type-C USB ports, but then again this is the first edition of HL.
 
-
-
-If I was to list the awesomeness of HL
+I'll try to list the reason HL is so awesome.
 
 1. ##### Untethered Mixed Reality
 _No one has ever come close to something like the Hololens. Ever._
-2. ##### [Windows 10 and its cool APIs](https://developer.microsoft.com/en-us/windows/getstarted/whats-new-windows-10) 
-_This is windows 10, running on your head ! All the API's that make win10 awesome work seemlessly in hololens as well._ 
+2. ##### Windows 10 and its cool APIs 
+_This is windows 10, running on your head ! All the [API](https://developer.microsoft.com/en-us/windows/getstarted/whats-new-windows-10)'s that make win10 awesome work seemlessly in hololens as well._ 
 3. ##### Impressive spatial mapping
 _Spatial mapping gives hololens the ability to see its surroundings. This even works great [outdoors](https://www.youtube.com/watch?v=BC1k_18JUDk)_
 4. ##### Spatial Audio.
