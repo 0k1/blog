@@ -23,7 +23,6 @@ As a disclaimer I should point out that this device is not targeting the consume
 If I was to list the awesomeness of HL
 
 1. Untethered Mixed Reality
-2. Windows 10 and its cool APIs _Windows10 was the best Windows. Ever._
+2. Windows 10 and its cool APIs : _This is windows 10. Running on your head ! :D_
 3. Impressive spatial mapping
 4. Spatial Audio
-5. 
