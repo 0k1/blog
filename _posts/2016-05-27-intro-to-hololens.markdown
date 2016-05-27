@@ -45,4 +45,4 @@ _This creates the feel that you'd want in a truly immersive device. As TIME maga
 5. ##### Unity for HL
 _Opting for such a universal solution to create applications for hololens gives tremendous opportunities for game developers and 3D artists to come around and create awesome interactions for HL_
 6. ##### Tele-Presence 
-_The ability to record and transmit holograms live gives opens up [phenomenal](https://www.youtube.com/watch?v=DxNGTU39PsU) [possibilities](http://research.microsoft.com/en-us/projects/holoportation/default.aspx)._
+_The ability to record and transmit holograms live opens up [phenomenal](https://www.youtube.com/watch?v=DxNGTU39PsU) [possibilities](http://research.microsoft.com/en-us/projects/holoportation/default.aspx)._
