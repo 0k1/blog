@@ -20,6 +20,19 @@ Microsoft’s efforts amount to the most impressive device I have had a chance t
 
 >>By opting for such a specialized coprocessor, Microsoft has traded some flexibility for increased power and thermal efficiency. Still, the HoloLens will not be feasible without it. That is because the form factor of a head-mounted computer puts serious constraints on battery size and how much heat can be dissipated without causing discomfort.
 
+Now for the real question. How do the blend the digital and the real ?
+ 
+ >>The HoloLens display is basically a set of transparent screens placed just in front of the eyes. Each eyepiece or screen lets light through and also shows digital content the way your monitor does. Each screen shows a slightly different image to create a stereoscopic illusion like the View Master toy does or 3D glasses do at 3D movies.
+
+ For those who'd want more on the device's display I'd suggest reading these below
+
+ *  [https://www.google.com/patents/US20130285885](https://www.google.com/patents/US20130285885)
+ *  [https://www.google.com/patents/US20130207964](https://www.google.com/patents/US20130207964)
+ *  [https://www.google.com/patents/US20130208362](https://www.google.com/patents/US20130208362)
+
+
+
+
 If I was to list the awesomeness of HL
 
 1. ##### Untethered Mixed Reality
@@ -27,8 +40,8 @@ _No one has ever come close to something like the Hololens. Ever._
 2. ##### [Windows 10 and its cool APIs](https://developer.microsoft.com/en-us/windows/getstarted/whats-new-windows-10) 
 _This is windows 10, running on your head ! All the API's that make win10 awesome work seemlessly in hololens as well._ 
 3. ##### Impressive spatial mapping
-_Spacial mapping gives hololens the ability to see its surroundings. This even works great [outdoors](https://www.youtube.com/watch?v=BC1k_18JUDk)_
+_Spatial mapping gives hololens the ability to see its surroundings. This even works great [outdoors](https://www.youtube.com/watch?v=BC1k_18JUDk)_
 4. ##### Spatial Audio.
 _This creates the feel that you'd want in a truely immersive device. As TIME magazine said : [Holograms can be heard, not just seen](http://time.com/4190843/microsoft-hololens-demo-2016/)_
-5. ##### Unity
-_Opting for such a universal solution to create applications for hololens gives tremendous opportunities for game developers and 3d artists to come around and create awesome interactions_
+5. ##### Unity for HL
+_Opting for such a universal solution to create applications for hololens gives tremendous opportunities for game developers and 3d artists to come around and create awesome interactions for HL_
