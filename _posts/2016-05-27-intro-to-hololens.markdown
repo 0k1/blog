@@ -37,7 +37,7 @@ I'll try to list the reasons HL is so awesome.
 1. ##### Untethered Mixed Reality
 _No one has ever come close to something like the Hololens. Ever._
 2. ##### Windows 10 and its cool APIs 
-_This is windows 10, running on your head ! All the [API](https://developer.microsoft.com/en-us/windows/getstarted/whats-new-windows-10)'s that make win10 awesome work seamlessly in hololens as well._ 
+_This is windows 10, running on your head ! All the [API](https://developer.microsoft.com/en-us/windows/getstarted/whats-new-windows-10)'s that make win10 awesome, work seamlessly in hololens as well._ 
 3. ##### Impressive spatial mapping
 _Spatial mapping gives hololens the ability to see its surroundings. This even works great [outdoors](https://www.youtube.com/watch?v=BC1k_18JUDk)_
 4. ##### Spatial Audio.
