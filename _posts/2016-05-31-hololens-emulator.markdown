@@ -15,4 +15,4 @@ For those who don't have the device as of now the emulator is available for down
 
 **HL Web portal**
 
-Every hololens emulator/device has a developer web portal associated with it. This shows the configs
+Every hololens emulator/device has a developer web portal associated with it. This shows enables us to check the current state of the device, deploy new app, perform mixed reality capture, analyze the system performance and much more.
