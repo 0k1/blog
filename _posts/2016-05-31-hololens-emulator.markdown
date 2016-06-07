@@ -1,6 +1,6 @@
 ---
 author: Arun Raj
-date: 2016-05-27 12:39:30+00:00
+date: 2016-05-31 12:39:30+00:00
 layout: post
 slug: getting-started-hl-emulator
 title: 'Getting Started : HL Emulator & Web Portal'
