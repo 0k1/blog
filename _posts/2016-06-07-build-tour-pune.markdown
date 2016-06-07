@@ -5,4 +5,4 @@ layout: post
 slug: build-tour-pune
 title: 'Build Tour : Pune'
 ---
-![Build](http://arun619.github.io/blog/assets/img/short_pune_m.png)
+![Build](http://arun619.github.io/blog/assets/img/short_pune_m.jpg)
